@@ -226,13 +226,13 @@ export const sitio = {
       nombre: "Diana H.",
       detalle: "Socia KORU",
       texto: "Me siento como otra persona. Mi ánimo es completamente diferente.",
-      autorizado: false, // Pendiente: pedirle autorización para publicarlo
+      autorizado: true,
     },
     {
       nombre: "Cristina U.",
       detalle: "Clase de Hidromix",
       texto: "Fue una experiencia excelente. Valoro mucho la orientación profesional del profe.",
-      autorizado: false, // Pendiente: pedirle autorización para publicarlo
+      autorizado: true,
     },
   ] satisfies Testimonio[],
 

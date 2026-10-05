@@ -27,8 +27,8 @@ export type DocumentoLegal = {
 
 /** Datos del responsable del tratamiento. */
 export const responsable = {
-  razonSocial: "KORU", // TODO legal: razón social exacta (como aparece en el RUT)
-  nit: "", // TODO legal: NIT. Si está vacío no se muestra.
+  razonSocial: "Nac Connection Group SAS",
+  nit: "901635449-7",
   domicilio: "Cali, Valle del Cauca, Colombia",
   direccion: sitio.ubicacion.direccion,
   correo: sitio.contacto.correo,

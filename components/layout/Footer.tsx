@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { responsable } from "@/content/legal";
 import { sitio } from "@/content/sitio";
 import { whatsappUrl } from "@/lib/whatsapp";
 import { ButtonLink } from "@/components/ui/Button";
@@ -122,7 +123,9 @@ export function Footer() {
         </div>
 
         <div className="mt-16 flex flex-col gap-3 border-t border-caramelo/20 pt-8 text-xs text-marfil/70 sm:flex-row sm:justify-between">
-          <p>© {anio} KORU · Club de bienestar · Cali, Colombia</p>
+          <p>
+            © {anio} KORU · {responsable.razonSocial} · NIT {responsable.nit} · Cali, Colombia
+          </p>
           <p className="text-sm italic">{sitio.frase}</p>
         </div>
       </Container>
