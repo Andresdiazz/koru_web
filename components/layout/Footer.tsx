@@ -41,12 +41,12 @@ export function Footer() {
               {sitio.fraseCierre}
             </p>
           </div>
-          <ButtonLink href={whatsappUrl(sitio.mensajeReserva)} tamano="lg" icono={<WhatsAppIcon className="h-5 w-5" />}>
+          <ButtonLink href={whatsappUrl(sitio.mensajeReserva)} tamano="lg" icono={<WhatsAppIcon className="h-5 w-5" />} className="shrink-0 whitespace-nowrap">
             Reserva ahora
           </ButtonLink>
         </div>
 
-        <WaveLine className="my-14 opacity-60 md:my-16" />
+        <WaveLine className="my-14 md:my-16" />
 
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           <Columna titulo="Horarios">

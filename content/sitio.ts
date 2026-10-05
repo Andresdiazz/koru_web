@@ -14,7 +14,7 @@ import type {
  */
 export const sitio = {
   nombre: "KORU",
-  frase: "Aquí no entrenas. Renaces.",
+  frase: "Aquí no entrenas. ¡Aquí renaces!",
   descripcion:
     "Un club de bienestar boutique en Cali con una piscina terapéutica donde cada sesión la guía un especialista.",
   fraseCierre: "Haz de tu próximo encuentro una experiencia para recordar.",
@@ -97,7 +97,7 @@ export const sitio = {
   /** Textos de las secciones del home, en orden de aparición. */
   home: {
     hero: {
-      titulo: "Aquí no entrenas. Renaces.",
+      titulo: "Aquí no entrenas. ¡Aquí renaces!",
       texto:
         "Un club de bienestar boutique en Cali con una piscina terapéutica donde cada sesión la guía un especialista.",
       botonPrincipal: "Agenda tu primera clase",

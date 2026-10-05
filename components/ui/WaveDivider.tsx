@@ -18,12 +18,19 @@ export function WaveDivider({ className, lineas = 3 }: { className?: string; lin
   );
 }
 
-/** Variante a todo el ancho para separar secciones grandes. */
+/**
+ * Separador a todo el ancho: líneas finas a los lados y, al centro, el motivo de agua
+ * en su proporción real (la onda no se estira con el ancho de la pantalla).
+ */
 export function WaveLine({ className }: { className?: string }) {
   return (
-    <svg aria-hidden viewBox="0 0 1440 40" preserveAspectRatio="none" fill="none" className={cn("h-6 w-full text-caramelo", className)} focusable="false">
-      <path d="M0 22 C 180 6, 360 6, 540 20 S 900 36, 1080 20 S 1340 8, 1440 16" stroke="currentColor" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-      <path d="M0 28 C 200 14, 400 16, 600 26 S 960 34, 1160 22 S 1380 14, 1440 22" stroke="currentColor" strokeWidth="1" opacity="0.5" vectorEffect="non-scaling-stroke" />
-    </svg>
+    <div aria-hidden className={cn("flex items-center gap-5 text-caramelo", className)}>
+      <span className="h-px flex-1 bg-current opacity-35" />
+      <svg viewBox="0 0 120 20" fill="none" className="h-5 w-24 shrink-0" focusable="false">
+        <path d="M2 11 C 18 3, 32 3, 48 10 S 80 18, 96 10 S 112 5, 118 8" stroke="currentColor" strokeWidth="1.1" strokeLinecap="round" />
+        <path d="M2 15 C 20 8, 36 9, 52 14 S 84 18, 100 12 S 114 9, 118 12" stroke="currentColor" strokeWidth="0.9" strokeLinecap="round" opacity="0.6" />
+      </svg>
+      <span className="h-px flex-1 bg-current opacity-35" />
+    </div>
   );
 }

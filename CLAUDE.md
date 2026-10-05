@@ -12,7 +12,7 @@ Especificación completa original: `docs/KORU_Prompt_Claude_Code_Web_v1.md`.
 
 **KORU** es una palabra maorí: la espiral del helecho que se despliega. Simboliza nueva vida, crecimiento, fuerza y paz. El club une **AQUA FIT** (la hidroterapia de Andrés Díaz, más de 10 años en Cali) y **SAISEI** (la nutrición de Sandra).
 
-**Frase de marca:** *Aquí no entrenas. Renaces.*
+**Frase de marca:** *Aquí no entrenas. ¡Aquí renaces!*
 
 **Posicionamiento:** no somos un gimnasio. Somos un club de bienestar donde la experiencia es el producto. El diferenciador es una **piscina terapéutica, no recreacional**: cada sesión en el agua la guía un especialista.
 

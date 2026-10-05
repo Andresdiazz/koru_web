@@ -110,7 +110,7 @@ export default function SistemaDeDiseno() {
           <div className="grid gap-16 lg:grid-cols-2">
             <div className="space-y-6">
               <p className="koru-wordmark text-6xl font-light md:text-7xl">KORU</p>
-              <p className="font-display text-5xl font-light md:text-6xl">Aquí no entrenas. Renaces.</p>
+              <p className="font-display text-5xl font-light md:text-6xl">Aquí no entrenas. ¡Aquí renaces!</p>
               <p className="font-display text-3xl italic text-arena">En el agua nadie queda por fuera.</p>
               <p className="eyebrow text-caramelo">Cormorant Light 300 · Regular 400</p>
             </div>

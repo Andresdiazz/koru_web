@@ -26,7 +26,7 @@ export function PrimeraClaseSection() {
             <p className="mt-3 text-lg">
               <strong className="font-medium">{pc.condicion}</strong> {pc.plazo}
             </p>
-            <WaveLine className="my-8 h-4 opacity-70" />
+            <WaveLine className="my-8" />
             <ButtonLink
               href={whatsappUrl(pc.mensajeWhatsApp)}
               icono={<WhatsAppIcon className="h-5 w-5" />}
