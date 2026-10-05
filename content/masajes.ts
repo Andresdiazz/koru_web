@@ -10,13 +10,11 @@ import type { ConfigMasajes } from "@/types/content";
  *            fila de masaje en la tabla de membresías.
  */
 export const masajes: ConfigMasajes = {
-  disponible: false,
+  disponible: true,
 
   titulo: "Masajes",
   tituloProximamente: "Masajes — Próximamente",
-  // TODO copy
   textoProximamente: "Estamos preparando la sala para que tu recuperación también sea una experiencia KORU.",
-  // TODO copy
   texto: "Manos expertas para soltar, recuperar y volver a ti.",
   botonAviso: "Quiero que me avisen",
   mensajeAviso: "Hola, quiero que me avisen cuando abran los masajes en KORU 🌿",

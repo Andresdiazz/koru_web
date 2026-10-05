@@ -25,6 +25,8 @@ export type Testimonio = {
   nombre: string;
   detalle: string;
   texto: string;
+  /** true = la persona autorizó publicar su testimonio y su nombre */
+  autorizado?: boolean;
 };
 
 export type Fundador = {

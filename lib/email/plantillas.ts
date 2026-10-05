@@ -93,8 +93,7 @@ ${filas(datos)}
 export function correoCliente(r: Reserva) {
   const nombre = r.nombre.split(" ")[0];
   const asunto = "Recibimos tu solicitud · KORU Business";
-  // TODO copy
-  const intro = `Gracias por pensar en KORU para tu equipo. Recibimos tu solicitud y en menos de un día hábil te enviaremos la propuesta con disponibilidad y detalles.`;
+  const intro = `Gracias por pensar en KORU para tu equipo. Recibimos tu solicitud y en máximo 2 días hábiles te enviaremos la propuesta con disponibilidad y detalles.`;
   const html = marco(
     `<h1 style="margin:0 0 16px;font-family:${serif};font-weight:400;font-size:32px;line-height:1.2">Hola, ${escapar(nombre)}.</h1>
 <p style="margin:0">${escapar(intro)}</p>

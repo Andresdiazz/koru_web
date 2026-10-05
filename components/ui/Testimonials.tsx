@@ -1,4 +1,4 @@
-import { Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { cn } from "@/lib/cn";
 import type { Testimonio } from "@/types/content";
 
@@ -8,6 +8,21 @@ import type { Testimonio } from "@/types/content";
  */
 export function Testimonials({ items, oscuro }: { items: Testimonio[]; oscuro?: boolean }) {
   if (items.length === 0) return null;
+  if (items.length === 1) {
+    const [t] = items;
+    return (
+      <Reveal as="figure" className="mx-auto max-w-4xl text-center">
+        <span aria-hidden className={cn("block font-display text-8xl leading-[0.5]", oscuro ? "text-caramelo" : "text-terracota")}>
+          “
+        </span>
+        <blockquote className="mt-6 font-display text-[1.75rem] leading-snug sm:text-4xl">{t.texto}</blockquote>
+        <figcaption className="mt-8 text-sm">
+          <span className="font-medium">{t.nombre}</span>
+          <span className={oscuro ? "text-marfil/70" : "text-tostado"}> · {t.detalle}</span>
+        </figcaption>
+      </Reveal>
+    );
+  }
   return (
     <Stagger
       as="ul"

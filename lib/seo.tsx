@@ -44,7 +44,7 @@ export function metaPagina({
 
 /**
  * Datos estructurados (schema.org) del club: HealthClub, que es un tipo de LocalBusiness.
- * La dirección exacta, el teléfono y los horarios salen de /content/sitio.ts (hoy con TODO).
+ * La dirección, el teléfono y los horarios salen de /content/sitio.ts.
  */
 export function jsonLdClub() {
   const url = sitio.url;
@@ -64,7 +64,7 @@ export function jsonLdClub() {
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",
-      streetAddress: sitio.ubicacion.direccion, // TODO: dirección exacta
+      streetAddress: sitio.ubicacion.calle,
       addressLocality: sitio.ubicacion.ciudad,
       addressRegion: sitio.ubicacion.region,
       addressCountry: sitio.ubicacion.pais,

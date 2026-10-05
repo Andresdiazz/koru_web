@@ -40,7 +40,7 @@ export const business = {
     texto: "Cuéntanos sobre tu equipo y te enviamos una propuesta con disponibilidad. No hay pagos en línea: la reserva se confirma después, con el 50% del valor.",
     pasosComoFunciona: [
       { titulo: "Envías tu solicitud", texto: "Toma menos de dos minutos." },
-      { titulo: "Recibes la propuesta", texto: "En menos de un día hábil, con fechas y detalles." }, // TODO copy: confirmar tiempo de respuesta
+      { titulo: "Recibes la propuesta", texto: "En máximo 2 días hábiles, con fechas y detalles." },
       { titulo: "Confirmas tu fecha", texto: "Con el pago del 50% del valor total." },
     ],
     avisoGrupoGrande:
@@ -48,13 +48,12 @@ export const business = {
     botonEnviar: "Enviar solicitud",
     gracias: {
       titulo: "¡Gracias, {nombre}!",
-      texto: "Recibimos tu solicitud y te enviamos una confirmación a {correo}. En menos de un día hábil te contactamos con la propuesta.", // TODO copy
+      texto: "Recibimos tu solicitud y te enviamos una confirmación a {correo}. En máximo 2 días hábiles te contactamos con la propuesta.",
       botonWhatsApp: "Enviar resumen por WhatsApp",
       botonVolver: "Volver a KORU Business",
     },
   },
   cierre: {
-    // TODO copy
     titulo: "Haz de tu próximo encuentro una experiencia para recordar.",
     texto: "Cuéntanos qué necesita tu equipo y te enviamos una propuesta a la medida.",
     botonReservar: "Reserva tu fecha",
@@ -228,7 +227,6 @@ export const experiencias: Experiencia[] = [
 
 export const gruposGrandes = {
   titulo: "¿Son más de 10?",
-  // TODO copy
   texto: "Para grupos grandes diseñamos una jornada completa a la medida de tu empresa.",
   imagen: { src: "/images/exp-grupos-grandes.jpg", alt: "Grupo grande reunido junto a una piscina al atardecer" },
   formatos: [
@@ -245,7 +243,6 @@ export const gruposGrandes = {
 
 export const bienestarTodoElAno = {
   titulo: "Bienestar todo el año",
-  // TODO copy
   texto: "Más allá de un día especial: acompañamos a tu empresa con programas continuos.",
   servicios: [
     {
@@ -300,9 +297,8 @@ export const bienestarTodoElAno = {
 /* ───────────── Por qué KORU ───────────── */
 
 export const porQueKoru: RazonKoru[] = [
-  // TODO copy (textos de apoyo)
   { titulo: "Piscina terapéutica", texto: "No recreacional: cada actividad en el agua la guía un especialista." },
-  { titulo: "Dos especialistas al frente", texto: "Andrés Díaz en hidroterapia y Sandra en nutrición SAISEI." },
+  { titulo: "Dos especialistas al frente", texto: "Andrés Díaz en hidroterapia y Sandra Alvarez en nutrición SAISEI." },
   { titulo: "Privada y limitada", texto: "Recibimos un grupo a la vez. El club es solo para tu equipo." },
   { titulo: "Experiencia 360°", texto: "Agua, movimiento, conversación y alimentación en un mismo día." },
   { titulo: "Personalizable", texto: "Ajustamos actividades, tiempos y detalles a lo que necesita tu equipo." },

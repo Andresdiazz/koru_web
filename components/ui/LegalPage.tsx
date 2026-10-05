@@ -15,19 +15,3 @@ export function LegalPage({ titulo, subtitulo, children }: { titulo: string; sub
     </>
   );
 }
-
-/** Aviso de texto pendiente de revisión legal. */
-export function AvisoPendiente({ correo }: { correo: string }) {
-  return (
-    <div role="note" className="mb-12 rounded-[var(--radius-card)] border border-caramelo bg-arena/40 p-6 md:p-8">
-      <p className="font-display text-2xl">Texto en revisión legal</p>
-      <p className="mt-2 text-tostado">
-        Estamos terminando la revisión de esta política. Mientras tanto, si tienes cualquier pregunta sobre tus datos, escríbenos a{" "}
-        <a href={`mailto:${correo}`} className="text-terracota underline underline-offset-4">
-          {correo}
-        </a>
-        .
-      </p>
-    </div>
-  );
-}

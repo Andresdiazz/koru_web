@@ -81,11 +81,11 @@ export default function BusinessPage() {
       <BienestarAnual />
       <PorQueKoru />
 
-      {sitio.testimoniosEmpresas.length > 0 && (
+      {sitio.testimoniosEmpresas.some((t) => t.autorizado) && (
         <Section tono="crema">
           <Container>
             <SectionHeader eyebrow="Empresas que vivieron KORU" titulo="Lo que dicen los equipos." className="mb-14" />
-            <Testimonials items={sitio.testimoniosEmpresas} />
+            <Testimonials items={sitio.testimoniosEmpresas.filter((t) => t.autorizado)} />
           </Container>
         </Section>
       )}

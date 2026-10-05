@@ -15,10 +15,9 @@ export const membresias: ConfigMembresias = {
 
   titulo: "Membresías",
   eyebrow: "Hazte socio",
-  tituloPagina: "Elige cómo vivir KORU.", // TODO copy
+  tituloPagina: "Elige cómo vivir KORU.",
   imagen: { src: "/images/salon-yoga.jpg", alt: "Salón de yoga y Pilates de KORU con luz cálida" },
   tituloComparativa: "Compara las membresías",
-  // TODO copy
   intro: "Tres formas de vivir KORU. Todas incluyen clases de salón ilimitadas y el acompañamiento de nuestros especialistas.",
   notaInscripcion: "Sin cuota de inscripción.",
   boton: "Agenda tu primera clase",
@@ -27,13 +26,13 @@ export const membresias: ConfigMembresias = {
     {
       id: "revive",
       nombre: "Revive",
-      frase: "Para empezar a moverte con intención.", // TODO copy
+      frase: "Para empezar a moverte con intención.",
       precioMensual: 280000,
     },
     {
       id: "flow",
       nombre: "Flow",
-      frase: "El equilibrio entre el salón y el agua.", // TODO copy
+      frase: "El equilibrio entre el salón y el agua.",
       precioMensual: 480000,
       destacada: true,
       etiquetaDestacada: "La más elegida",
@@ -41,7 +40,7 @@ export const membresias: ConfigMembresias = {
     {
       id: "aqua",
       nombre: "Aqua",
-      frase: "La experiencia KORU completa, con el agua al centro.", // TODO copy
+      frase: "La experiencia KORU completa, con el agua al centro.",
       precioMensual: 780000,
     },
   ],
@@ -75,8 +74,7 @@ export const membresias: ConfigMembresias = {
     },
     {
       id: "saisei",
-      // PENDIENTE DE DECISIÓN: la regla de contenido 3 prohíbe mostrar descuentos.
-      // Se presenta como beneficio en tienda, sin la palabra "descuento".
+      // Se presenta como beneficio en tienda (sin la palabra "descuento"), aprobado por KORU.
       label: "Beneficio en tienda SAISEI",
       valores: { revive: "10%", flow: "15%", aqua: "20%" },
     },

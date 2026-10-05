@@ -159,12 +159,14 @@ Copia `.env.example` como `.env.local` (local) y configúralas también en Verce
 
 ## Antes de lanzar (pendientes)
 
-- [ ] WhatsApp, correos, dirección exacta, horarios y redes reales en `content/sitio.ts` (están como `TODO`).
-- [ ] Copy marcado `// TODO copy` (bios de fundadores, testimonios reales, cifras, textos de apoyo).
-- [ ] Textos legales de privacidad y tratamiento de datos (`content/legal.ts`, `TODO legal`).
+- [ ] Razón social y NIT en `content/legal.ts` (`responsable`), y revisión de las políticas por un abogado.
+- [ ] Autorización de las personas de los testimonios: en `content/sitio.ts` solo se publican los que tienen `autorizado: true`.
 - [ ] Fotos reales y video del hero (`public/images/README.md`).
-- [ ] Llave de Resend y prueba real de punta a punta del formulario.
-- [ ] Opcional: borrar la página interna `/sistema-de-diseno` (no se indexa).
+- [ ] Llave de Resend con el dominio `koruclub.co` verificado y prueba real de punta a punta del formulario.
+
+### Testimonios
+
+Cada testimonio en `content/sitio.ts` tiene un campo `autorizado`. Ponlo en `true` solo cuando la persona haya aceptado que su testimonio y su nombre aparezcan en la web. Si no hay ninguno autorizado, la sección se oculta sola; con uno solo se muestra como cita destacada.
 
 ---
 

@@ -31,19 +31,21 @@ export const sitio = {
     /** Número en formato internacional, solo dígitos (57 + celular). */
     whatsapp: "573103012510",
     whatsappVisible: "+57 310 301 2510",
-    correo: "hola@koru.club", // TODO: correo público real
+    correo: "reservas@koruclub.co",
     /** Correo que recibe las solicitudes del formulario de KORU Business */
-    correoReservas: "reservas@koru.club", // TODO: correo de destino real
+    correoReservas: "reservas@koruclub.co",
   },
 
   ubicacion: {
     sede: "Cali – El Ingenio",
-    direccion: "Dirección por confirmar, El Ingenio, Cali", // TODO: dirección exacta
+    direccion: "Carrera 85A #15-59, El Ingenio, Cali",
+    /** Solo calle y número, para los datos estructurados de Google */
+    calle: "Carrera 85A #15-59",
     ciudad: "Cali",
     region: "Valle del Cauca",
     pais: "CO",
     /** Búsqueda que usa el mapa embebido y el botón "Cómo llegar" */
-    consultaMapa: "El Ingenio, Cali, Valle del Cauca", // TODO: reemplazar por la dirección exacta
+    consultaMapa: "Carrera 85A #15-59, El Ingenio, Cali, Valle del Cauca, Colombia",
   },
 
   /**
@@ -51,16 +53,15 @@ export const sitio = {
    * estructurados para Google (días en inglés y horas en 24 h). Sin `schema` = no se publica.
    */
   horarios: [
-    // TODO horarios reales
     { dias: "Lunes a viernes", horas: "5:00 a. m. – 9:00 p. m.", schema: { dias: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], abre: "05:00", cierra: "21:00" } },
     { dias: "Sábados", horas: "7:00 a. m. – 2:00 p. m.", schema: { dias: ["Saturday"], abre: "07:00", cierra: "14:00" } },
     { dias: "Domingos y festivos", horas: "Solo experiencias con reserva" },
   ] satisfies Horario[],
 
+  /** Redes sociales. Para agregar una red, añádela aquí y en el ícono del footer. */
   redes: {
-    instagram: "https://instagram.com/", // TODO
-    tiktok: "https://tiktok.com/", // TODO
-    facebook: "https://facebook.com/", // TODO
+    instagram: "https://www.instagram.com/koruclub.co/",
+    tiktok: "https://www.tiktok.com/@koruclub.co",
   },
 
   navegacion: [
@@ -81,6 +82,9 @@ export const sitio = {
    * Mensaje precargado del botón flotante de WhatsApp según la página.
    * Se usa el prefijo de ruta más largo que coincida.
    */
+  /** Mensaje del botón "Reserva ahora" del pie de página */
+  mensajeReserva: "Hola KORU 🌿 Quiero hacer una reserva.",
+
   mensajesWhatsApp: {
     "/": "Hola KORU 🌿 Quiero agendar mi primera clase.",
     "/experiencias-y-clases": "Hola KORU 🌿 Quiero información sobre las clases.",
@@ -105,13 +109,12 @@ export const sitio = {
     club: {
       eyebrow: "Conocer KORU",
       titulo: "No somos un gimnasio.",
-      // TODO copy
       texto: "Somos un club de bienestar donde la experiencia es el producto: agua, movimiento y nutrición guiados por especialistas, en grupos pequeños y sin afanes.",
-      /** Cifras que se cuentan al aparecer. TODO copy: confirmar cifras. */
+      /** Cifras que se cuentan al aparecer. */
       cifras: [
         { valor: 10, prefijo: "+", sufijo: "", label: "años de hidroterapia en Cali" },
         { valor: 1, prefijo: "", sufijo: "", label: "piscina terapéutica, no recreacional" },
-        { valor: 100, prefijo: "", sufijo: "%", label: "de las sesiones en el agua guiadas por un especialista" },
+        { valor: 100, prefijo: "", sufijo: "%", label: "de las sesiones en el agua y grupales guiadas por especialistas" },
       ],
     },
     piscina: {
@@ -123,7 +126,6 @@ export const sitio = {
     clases: {
       eyebrow: "Clases",
       titulo: "Del agua al salón.",
-      // TODO copy
       texto: "Primero el agua, siempre guiada. Luego el salón, en grupos pequeños. Elige cómo quieres moverte hoy.",
       boton: "Ver todas las clases",
     },
@@ -135,26 +137,25 @@ export const sitio = {
     business: {
       eyebrow: "KORU Business",
       titulo: "Tu equipo no necesita otro evento. Necesita una experiencia.",
-      // TODO copy
       texto: "Experiencias privadas de bienestar para equipos de hasta 10 personas: agua, movimiento, conversación y alimentación saludable.",
       boton: "Conoce KORU Business",
       imagen: { src: "/images/exp-team-connection-day.jpg", alt: "Equipo de empresa haciendo yoga al aire libre al atardecer" },
     },
     fundadores: {
       eyebrow: "Los fundadores",
-      titulo: "Dos especialistas, un mismo propósito.", // TODO copy
+      titulo: "Dos especialistas, un mismo propósito.",
     },
     galeria: {
       eyebrow: "El club",
-      titulo: "Un lugar pensado para volver a ti.", // TODO copy
+      titulo: "Un lugar pensado para volver a ti.",
     },
     testimonios: {
       eyebrow: "Lo que dicen de KORU",
-      titulo: "Historias de socios.", // TODO copy
+      titulo: "Historias de socios.",
     },
     ubicacion: {
       eyebrow: "Ubicación",
-      titulo: "Te esperamos en El Ingenio.", // TODO copy
+      titulo: "Te esperamos en El Ingenio.",
       botonComoLlegar: "Cómo llegar",
       botonWhatsApp: "Escríbenos por WhatsApp",
     },
@@ -163,8 +164,8 @@ export const sitio = {
   /** Textos de la página /contacto. */
   contactoPagina: {
     eyebrow: "Contacto",
-    titulo: "Hablemos.", // TODO copy
-    texto: "Escríbenos por WhatsApp para agendar tu primera clase, resolver dudas o planear una experiencia para tu equipo.", // TODO copy
+    titulo: "Hablemos.",
+    texto: "Escríbenos por WhatsApp para agendar tu primera clase, resolver dudas o planear una experiencia para tu equipo.",
   },
 
   pilares: [
@@ -190,7 +191,6 @@ export const sitio = {
     {
       nombre: "Andrés Díaz",
       rol: "Hidroterapeuta · Fundador de AQUA FIT",
-      // TODO copy
       bio: "Lleva más de 10 años en Cali guiando personas en el agua. Cree que el movimiento sin dolor es el primer paso para volver a confiar en el cuerpo.",
       imagen: {
         src: "/images/fundador-andres.jpg",
@@ -198,35 +198,41 @@ export const sitio = {
       },
     },
     {
-      nombre: "Sandra",
+      nombre: "Sandra Alvarez",
       rol: "Fundadora de SAISEI",
-      // TODO copy
       bio: "Acompaña a cada socio desde la nutrición, con asesoría cercana y suplementación pensada para su proceso, no para una moda.",
       imagen: {
         src: "/images/fundadora-sandra.jpg",
-        alt: "Retrato de Sandra, fundadora de SAISEI y cofundadora de KORU",
+        alt: "Retrato de Sandra Alvarez, fundadora de SAISEI y cofundadora de KORU",
       },
     },
   ] satisfies Fundador[],
 
-  /** Testimonios del home. TODO: reemplazar por testimonios reales (Fase 3: Google Reviews). */
+  /**
+   * Testimonios del home (Fase 3: se podrán sumar reseñas de Google).
+   * Solo se publican los que tienen `autorizado: true`: la persona aceptó que su
+   * testimonio y su nombre aparezcan en la web (Ley 1581). Si ninguno está autorizado,
+   * la sección se oculta.
+   */
   testimonios: [
     {
-      nombre: "Carolina M.", // TODO
-      detalle: "Socia Flow",
+      nombre: "Juana Valentina",
+      detalle: "Viajó desde Bogotá",
       texto:
-        "Llegué por una lesión de rodilla y me quedé por la gente. En el agua volví a moverme sin miedo.",
+        "Viajé desde Bogotá a Cali solo para visitar KORU y hacer terapias en el agua. Mejoró mi mente, y me encontré con que KORU no solo hacía terapia física: aproveché y tomé clases de yoga y Pilates.",
+      autorizado: true,
     },
     {
-      nombre: "Juan Pablo R.", // TODO
-      detalle: "Socio Aqua",
-      texto:
-        "No se siente como un gimnasio. Cada clase tiene a alguien pendiente de ti y eso cambia todo.",
+      nombre: "Diana H.",
+      detalle: "Socia KORU",
+      texto: "Me siento como otra persona. Mi ánimo es completamente diferente.",
+      autorizado: false, // Pendiente: pedirle autorización para publicarlo
     },
     {
-      nombre: "Luisa F.", // TODO
-      detalle: "Socia Revive",
-      texto: "El Pilates y la Rumba me cambiaron la semana. Salgo con otra energía.",
+      nombre: "Cristina U.",
+      detalle: "Clase de Hidromix",
+      texto: "Fue una experiencia excelente. Valoro mucho la orientación profesional del profe.",
+      autorizado: false, // Pendiente: pedirle autorización para publicarlo
     },
   ] satisfies Testimonio[],
 

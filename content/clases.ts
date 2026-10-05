@@ -26,7 +26,6 @@ export const clases: Clase[] = [
     nombre: "Hidroterapia",
     tipo: "piscina",
     descripcion: "Sesión terapéutica individual con especialista.",
-    // TODO copy
     descripcionLarga:
       "Una sesión uno a uno en la piscina terapéutica, diseñada para tu cuerpo y tu momento. El agua sostiene tu peso, reduce el impacto y te permite moverte con libertad mientras un especialista guía cada ejercicio. Es el corazón de KORU: más de 10 años de experiencia de AQUA FIT en Cali.",
     formato: "Individual",
@@ -88,14 +87,14 @@ export const clases: Clase[] = [
 export const paginaClases = {
   hero: {
     eyebrow: "Experiencias y clases",
-    titulo: "Del agua al salón, siempre con intención.", // TODO copy
-    texto: "Clases de piscina guiadas por especialistas, clases de salón en grupos pequeños y sesiones de hidroterapia uno a uno.", // TODO copy
+    titulo: "Del agua al salón, siempre con intención.",
+    texto: "Clases de piscina guiadas por especialistas, clases de salón en grupos pequeños y sesiones de hidroterapia uno a uno.",
     imagen: { src: "/images/piscina-escalones.jpg", alt: "Escalones de entrada a la piscina terapéutica de KORU" },
   },
   piscina: {
     eyebrow: "En el agua",
     titulo: "Piscina terapéutica, no recreacional.",
-    texto: "Cada sesión en el agua la guía un especialista. El agua sostiene tu cuerpo y te deja moverte con libertad.", // TODO copy
+    texto: "Cada sesión en el agua la guía un especialista. El agua sostiene tu cuerpo y te deja moverte con libertad.",
   },
   hidroterapia: {
     eyebrow: "Servicio estrella",
@@ -106,6 +105,6 @@ export const paginaClases = {
   salon: {
     eyebrow: "En el salón",
     titulo: "Movimiento en grupos pequeños.",
-    texto: "Pilates, Yoga, Rumba, Cardio Step y Cardio Box con instructores que te conocen por tu nombre.", // TODO copy
+    texto: "Pilates, Yoga, Rumba, Cardio Step y Cardio Box con instructores que te conocen por tu nombre.",
   },
 };

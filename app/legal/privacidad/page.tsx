@@ -1,31 +1,22 @@
 import type { Metadata } from "next";
-import { metaPagina } from "@/lib/seo";
-import { AvisoPendiente, LegalPage } from "@/components/ui/LegalPage";
+import { DocumentoLegalView, fechaLegal } from "@/components/ui/DocumentoLegalView";
+import { LegalPage } from "@/components/ui/LegalPage";
 import { privacidad } from "@/content/legal";
-import { sitio } from "@/content/sitio";
+import { metaPagina } from "@/lib/seo";
 
 export const metadata: Metadata = metaPagina({
   titulo: privacidad.titulo,
-  descripcion: "Política de privacidad del sitio web de KORU.",
+  descripcion: "Qué información recoge el sitio web de KORU, para qué la usa y cómo puedes ejercer tus derechos.",
   ruta: "/legal/privacidad",
 });
 
-// TODO legal: KORU entrega el texto tras la revisión legal. Completar cada sección en /content/legal.ts.
 export default function PrivacidadPage() {
-  const doc: { titulo: string; subtitulo?: string; secciones: string[] } = privacidad;
   return (
-    <LegalPage titulo={doc.titulo} subtitulo={doc.subtitulo}>
-      <AvisoPendiente correo={sitio.contacto.correo} />
-      <ol className="space-y-8">
-        {doc.secciones.map((s, i) => (
-          <li key={s}>
-            <h2 className="text-3xl">
-              {i + 1}. {s}
-            </h2>
-            <p className="mt-3 text-tostado/70 italic">Contenido pendiente de revisión legal.</p>
-          </li>
-        ))}
-      </ol>
+    <LegalPage titulo={privacidad.titulo} subtitulo={`${privacidad.subtitulo} · Última actualización: ${fechaLegal(privacidad.actualizado)}`}>
+      <DocumentoLegalView
+        doc={privacidad}
+        enlaceRelacionado={{ href: "/legal/tratamiento-de-datos", label: "Leer la política de tratamiento de datos personales" }}
+      />
     </LegalPage>
   );
 }

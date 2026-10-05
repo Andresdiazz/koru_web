@@ -8,11 +8,12 @@ import { KoruSpiral } from "@/components/ui/KoruSpiral";
 import { Container } from "@/components/ui/Section";
 import { WaveLine } from "@/components/ui/WaveDivider";
 
-const redes = [
-  { nombre: "Instagram", href: sitio.redes.instagram, icono: "instagram" },
-  { nombre: "TikTok", href: sitio.redes.tiktok, icono: "tiktok" },
-  { nombre: "Facebook", href: sitio.redes.facebook, icono: "facebook" },
-] as const;
+const nombresRedes = { instagram: "Instagram", tiktok: "TikTok", facebook: "Facebook" } as const;
+const redes = (Object.entries(sitio.redes) as [keyof typeof nombresRedes, string][]).map(([icono, href]) => ({
+  icono,
+  href,
+  nombre: nombresRedes[icono],
+}));
 
 function Columna({ titulo, children }: { titulo: string; children: React.ReactNode }) {
   return (
@@ -39,7 +40,7 @@ export function Footer() {
               {sitio.fraseCierre}
             </p>
           </div>
-          <ButtonLink href="/business/reservar" tamano="lg">
+          <ButtonLink href={whatsappUrl(sitio.mensajeReserva)} tamano="lg" icono={<WhatsAppIcon className="h-5 w-5" />}>
             Reserva ahora
           </ButtonLink>
         </div>
