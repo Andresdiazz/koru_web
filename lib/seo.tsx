@@ -59,7 +59,7 @@ export function jsonLdClub() {
     url,
     image: `${url}/images/og-koru.jpg`,
     logo: `${url}/brand/koru-logo.png`,
-    telephone: `+${sitio.contacto.whatsapp}`, // TODO: número real
+    telephone: `+${sitio.contacto.whatsapp}`,
     email: sitio.contacto.correo,
     priceRange: "$$",
     address: {

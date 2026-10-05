@@ -29,8 +29,8 @@ export const sitio = {
 
   contacto: {
     /** Número en formato internacional, solo dígitos (57 + celular). */
-    whatsapp: "573000000000", // TODO: número real de WhatsApp de KORU
-    whatsappVisible: "+57 300 000 0000", // TODO
+    whatsapp: "573103012510",
+    whatsappVisible: "+57 310 301 2510",
     correo: "hola@koru.club", // TODO: correo público real
     /** Correo que recibe las solicitudes del formulario de KORU Business */
     correoReservas: "reservas@koru.club", // TODO: correo de destino real
