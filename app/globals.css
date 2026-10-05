@@ -1,26 +1,185 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* ─────────────────────────────────────────────
+   KORU · Sistema de diseño
+   Solo estos colores. Nunca colores fríos, neón ni blanco puro.
+   ───────────────────────────────────────────── */
+@theme {
+  --color-*: initial;
+  --color-espresso: #2c1a0e;
+  --color-tostado: #5c3317;
+  --color-terracota: #8b4a2b;
+  --color-caramelo: #c4813f;
+  --color-arena: #e8c99a;
+  --color-crema: #f5ede0;
+  --color-marfil: #faf5ef;
+  --color-transparent: transparent;
+  --color-current: currentColor;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --font-display: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-display-italica: var(--font-cormorant-italica), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-dm-sans), "DM Sans", system-ui, sans-serif;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --radius-card: 24px;
+  --radius-pill: 999px;
+
+  --tracking-koru: 0.4em;
+  --tracking-eyebrow: 0.22em;
+
+  --ease-koru: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --shadow-card: 0 1px 2px rgb(44 26 14 / 0.06), 0 12px 32px -12px rgb(44 26 14 / 0.18);
+  --shadow-card-hover: 0 2px 4px rgb(44 26 14 / 0.08), 0 28px 48px -16px rgb(44 26 14 / 0.32);
+
+  --animate-slow-zoom: slow-zoom 24s var(--ease-koru) infinite alternate;
+  --animate-fade-up: fade-up 1.2s var(--ease-koru) both;
+  --animate-scroll-cue: scroll-cue 2.4s var(--ease-koru) infinite;
+
+  /* Solo movimiento (sin opacidad 0): el texto del hero es visible desde el primer pintado,
+     así cuenta de inmediato para el LCP. */
+  @keyframes fade-up {
+    from {
+      transform: translateY(26px);
+    }
+    to {
+      transform: none;
+    }
+  }
+
+  @keyframes scroll-cue {
+    0% {
+      transform: scaleY(0);
+      transform-origin: top;
+    }
+    45% {
+      transform: scaleY(1);
+      transform-origin: top;
+    }
+    55% {
+      transform: scaleY(1);
+      transform-origin: bottom;
+    }
+    100% {
+      transform: scaleY(0);
+      transform-origin: bottom;
+    }
+  }
+
+  @keyframes slow-zoom {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.08);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  html {
+    background-color: var(--color-crema);
+    color: var(--color-espresso);
+    -webkit-text-size-adjust: 100%;
+    /* Cormorant usa números antiguos por defecto; los queremos alineados (precios, cifras) */
+    font-variant-numeric: lining-nums;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-crema);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    font-weight: 300;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  /* Bloquea el scroll de fondo mientras haya un modal abierto (lightbox) */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
+  ::selection {
+    background-color: var(--color-caramelo);
+    color: var(--color-espresso);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-caramelo);
+    outline-offset: 3px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer components {
+  /* Palabra KORU en display: mayúsculas con letter-spacing amplio */
+  .koru-wordmark {
+    font-family: var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-koru);
+    margin-right: calc(var(--tracking-koru) * -1);
+  }
+
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-eyebrow);
+  }
+
+  /* Carrusel deslizable con snap (móvil) */
+  .snap-carousel {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.25rem;
+    padding-inline: 1.25rem;
+    scrollbar-width: none;
+    overscroll-behavior-x: contain;
+  }
+  .snap-carousel::-webkit-scrollbar {
+    display: none;
+  }
+  .snap-carousel > * {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+  }
+}
+
+/* Las itálicas del sitio son siempre de Cormorant, con su archivo itálico propio (sin precarga).
+   Va fuera de las capas para ganarle a la utilidad font-display y evitar itálicas sintéticas. */
+.italic,
+em {
+  font-family: var(--font-display-italica);
 }
