@@ -16,7 +16,7 @@ export function FundadoresSection() {
             <StaggerItem as="li" key={f.nombre} className={i === 1 ? "sm:mt-24" : undefined}>
               <figure>
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-card)] bg-arena">
-                  <Image src={f.imagen.src} alt={f.imagen.alt} fill sizes="(min-width: 640px) 45vw, 100vw" quality={60} className="object-cover" />
+                  <Image src={f.imagen.src} alt={f.imagen.alt} fill sizes="(min-width: 640px) 45vw, 100vw" quality={75} className="object-cover" />
                 </div>
                 <figcaption className="mt-8">
                   <p className="eyebrow text-terracota">{f.rol}</p>

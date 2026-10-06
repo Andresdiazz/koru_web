@@ -16,7 +16,7 @@ export function GruposGrandes() {
           <div>
             <SectionHeader eyebrow="Grupos grandes" titulo={gruposGrandes.titulo} texto={gruposGrandes.texto} oscuro />
             <Reveal delay={0.1} className="relative mt-10 aspect-[4/3] overflow-hidden rounded-[var(--radius-card)]">
-              <Image src={gruposGrandes.imagen.src} alt={gruposGrandes.imagen.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={60} className="object-cover" />
+              <Image src={gruposGrandes.imagen.src} alt={gruposGrandes.imagen.alt} fill sizes="(min-width: 1024px) 40vw, 100vw" quality={75} className="object-cover" />
             </Reveal>
           </div>
           <div className="space-y-6">

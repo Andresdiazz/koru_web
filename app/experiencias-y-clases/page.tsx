@@ -59,7 +59,7 @@ export default function ExperienciasYClasesPage() {
           {/* Hidroterapia: el servicio estrella, con más espacio */}
           <article id={estrella.slug} className="mt-16 grid scroll-mt-28 items-stretch gap-0 overflow-hidden rounded-[var(--radius-card)] bg-espresso text-marfil shadow-(--shadow-card-hover) md:mt-20 lg:grid-cols-2">
             <Parallax className="relative min-h-[22rem] lg:min-h-[34rem]" intensidad={6}>
-              <Image src={estrella.imagen.src} alt={estrella.imagen.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={60} className="object-cover" />
+              <Image src={estrella.imagen.src} alt={estrella.imagen.alt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={75} className="object-cover" />
             </Parallax>
             <Reveal className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
               <Eyebrow oscuro className="mb-5">★ {hidroterapia.eyebrow}</Eyebrow>

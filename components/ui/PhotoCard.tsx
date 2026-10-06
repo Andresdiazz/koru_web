@@ -37,7 +37,7 @@ export function PhotoCard({
           alt={imagen.alt}
           fill
           sizes={sizes}
-          quality={60}
+          quality={75}
           className="object-cover brightness-[0.82] saturate-[0.92] transition-[transform,filter] duration-700 ease-(--ease-koru) group-hover:scale-[1.04] group-hover:brightness-100 group-hover:saturate-100"
         />
         <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgb(44_26_14/0.88)_100%)]" />

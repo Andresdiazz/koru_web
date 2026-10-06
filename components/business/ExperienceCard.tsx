@@ -19,7 +19,7 @@ export function ExperienceCard({ experiencia, sizes = "(min-width: 1024px) 33vw,
           alt={experiencia.imagen.alt}
           fill
           sizes={sizes}
-          quality={60}
+          quality={75}
           className="object-cover brightness-[0.88] transition-[transform,filter] duration-700 ease-(--ease-koru) group-hover:scale-[1.05] group-hover:brightness-100"
         />
       </div>

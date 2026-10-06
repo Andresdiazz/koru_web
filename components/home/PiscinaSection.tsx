@@ -12,7 +12,7 @@ export function PiscinaSection() {
   return (
     <section className="relative isolate overflow-hidden bg-espresso text-marfil">
       <Parallax className="absolute inset-0 -z-20" intensidad={10}>
-        <Image src={piscina.imagen.src} alt={piscina.imagen.alt} fill sizes="100vw" quality={60} className="object-cover" />
+        <Image src={piscina.imagen.src} alt={piscina.imagen.alt} fill sizes="100vw" quality={75} className="object-cover" />
       </Parallax>
       <div
         aria-hidden

@@ -14,8 +14,8 @@ export function BusinessSection() {
       <Container>
         <div className="grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
           <Reveal className="lg:order-2">
-            <Parallax className="relative aspect-[4/5] rounded-[var(--radius-card)] sm:aspect-[5/4] lg:aspect-[4/5]" intensidad={6}>
-              <Image src={business.imagen.src} alt={business.imagen.alt} fill sizes="(min-width: 1024px) 45vw, 100vw" quality={60} className="object-cover" />
+            <Parallax className="relative aspect-[4/3] rounded-[var(--radius-card)] lg:aspect-[5/4]" intensidad={4}>
+              <Image src={business.imagen.src} alt={business.imagen.alt} fill sizes="(min-width: 1024px) 45vw, 100vw" quality={75} className="object-cover" />
             </Parallax>
           </Reveal>
           <div>

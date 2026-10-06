@@ -70,7 +70,7 @@ export function Gallery({ items }: { items: ItemGaleria[] }) {
                 src={item.src}
                 alt={item.alt}
                 fill
-                quality={60}
+                quality={75}
                 sizes={item.formato === "grande" || item.formato === "ancho" ? "(min-width: 768px) 50vw, 100vw" : "(min-width: 768px) 25vw, 50vw"}
                 className="object-cover brightness-[0.85] transition-[transform,filter] duration-700 ease-(--ease-koru) group-hover:scale-[1.05] group-hover:brightness-100"
               />

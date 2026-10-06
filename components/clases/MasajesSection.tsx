@@ -24,7 +24,7 @@ export function MasajesSection() {
               alt={masajes.imagen.alt}
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
-              quality={60}
+              quality={75}
               className={disponible ? "object-cover" : "object-cover brightness-90 sepia-[0.2]"}
             />
             {!disponible && (
