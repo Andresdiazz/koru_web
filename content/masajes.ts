@@ -21,7 +21,7 @@ export const masajes: ConfigMasajes = {
   botonAgendar: "Agenda tu masaje",
   mensajeAgendar: "Hola KORU 🌿 Quiero agendar un masaje.",
 
-  imagen: { src: "/images/masajes.jpg", alt: "Masaje con piedras calientes y flores sobre la espalda" },
+  imagen: { src: "/images/masajes.jpg", alt: "Masaje de espalda con aceite en la sala de masajes de KORU" },
 
   masajes: [
     { nombre: "Express", duracionMin: 30, precio: 70000 },

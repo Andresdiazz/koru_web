@@ -102,7 +102,7 @@ export const sitio = {
         "Un club de bienestar boutique en Cali con una piscina terapéutica donde cada sesión la guía un especialista.",
       botonPrincipal: "Agenda tu primera clase",
       botonSecundario: "Conoce el club",
-      imagen: { src: "/images/piscina-hero.jpg", alt: "Piscina terapéutica de KORU con luz cálida" },
+      imagen: { src: "/images/piscina-hero.jpg", alt: "Piscina terapéutica de KORU con columnas, agua turquesa y luz cálida" },
       /** Video en loop. Si el archivo no existe en /public, se muestra solo la imagen. */
       video: { mp4: "/video/piscina-hero.mp4", webm: "/video/piscina-hero.webm" },
     },
@@ -121,7 +121,7 @@ export const sitio = {
       eyebrow: "La piscina",
       lineas: ["“En el agua nadie queda por fuera:", "quien no corre, flota;", "quien tiene una lesión,", "se mueve sin dolor.”"],
       boton: "Ver clases de piscina",
-      imagen: { src: "/images/piscina-parallax.jpg", alt: "Piscina terapéutica de KORU rodeada de madera y luz cálida" },
+      imagen: { src: "/images/piscina-parallax.jpg", alt: "Piscina de KORU con el logo de AQUA FIT en la pared de piedra y plantas" },
     },
     clases: {
       eyebrow: "Clases",
@@ -139,7 +139,7 @@ export const sitio = {
       titulo: "Tu equipo no necesita otro evento. Necesita una experiencia.",
       texto: "Experiencias privadas de bienestar para equipos de hasta 10 personas: agua, movimiento, conversación y alimentación saludable.",
       boton: "Conoce KORU Business",
-      imagen: { src: "/images/exp-team-connection-day.jpg", alt: "Equipo de empresa haciendo yoga al aire libre al atardecer" },
+      imagen: { src: "/images/exp-team-connection-day.jpg", alt: "Equipo haciendo Pilates Mat en el salón de KORU" },
     },
     fundadores: {
       eyebrow: "Los fundadores",
@@ -194,7 +194,7 @@ export const sitio = {
       bio: "Lleva más de 10 años en Cali guiando personas en el agua. Cree que el movimiento sin dolor es el primer paso para volver a confiar en el cuerpo.",
       imagen: {
         src: "/images/fundador-andres.jpg",
-        alt: "Retrato de Andrés Díaz, hidroterapeuta y cofundador de KORU",
+        alt: "Andrés Díaz, hidroterapeuta y cofundador de KORU, junto a la piscina",
       },
     },
     {
@@ -203,7 +203,7 @@ export const sitio = {
       bio: "Acompaña a cada socio desde la nutrición, con asesoría cercana y suplementación pensada para su proceso, no para una moda.",
       imagen: {
         src: "/images/fundadora-sandra.jpg",
-        alt: "Retrato de Sandra Alvarez, fundadora de SAISEI y cofundadora de KORU",
+        alt: "Sandra Alvarez, fundadora de SAISEI y cofundadora de KORU, frente al logo de SAISEI",
       },
     },
   ] satisfies Fundador[],
@@ -240,15 +240,15 @@ export const sitio = {
   testimoniosEmpresas: [] as Testimonio[],
 
   galeria: [
-    { src: "/images/piscina-escalones.jpg", alt: "Escalones de entrada a la piscina terapéutica de KORU", formato: "grande" },
-    { src: "/images/sala-fisioterapia.jpg", alt: "Sala de fisioterapia del club", formato: "normal" },
-    { src: "/images/salon-yoga.jpg", alt: "Salón de yoga y Pilates con luz cálida", formato: "alto" },
-    { src: "/images/recepcion.jpg", alt: "Recepción de KORU", formato: "ancho" },
-    { src: "/images/zona-social.jpg", alt: "Zona social del club", formato: "normal" },
-    { src: "/images/tienda-saisei.jpg", alt: "Productos de la tienda SAISEI", formato: "normal" },
-    { src: "/images/fachada.jpg", alt: "Fachada de la sede KORU en El Ingenio", formato: "alto" },
-    { src: "/images/sala-masajes.jpg", alt: "Sala de masajes", formato: "normal" },
-    { src: "/images/exp-team-connection-day.jpg", alt: "Equipo de empresa durante una experiencia KORU", formato: "ancho" },
+    { src: "/images/piscina-escalones.jpg", alt: "Escalera de acceso a la piscina terapéutica de KORU", formato: "grande" },
+    { src: "/images/sala-fisioterapia.jpg", alt: "Sala de fisioterapia de KORU con camilla y equipos", formato: "normal" },
+    { src: "/images/clase-pilates.jpg", alt: "Salón de yoga y Pilates de KORU durante una clase con balones", formato: "alto" },
+    { src: "/images/recepcion.jpg", alt: "Recepción de KORU con los logos de SAISEI y AQUA FIT", formato: "ancho" },
+    { src: "/images/zona-social.jpg", alt: "Zona social de KORU con mesas, plantas y letrero de neón", formato: "normal" },
+    { src: "/images/tienda-saisei.jpg", alt: "Productos y suplementos de la tienda SAISEI", formato: "normal" },
+    { src: "/images/fachada.jpg", alt: "Fachada blanca de la sede KORU en El Ingenio, con palmera", formato: "alto" },
+    { src: "/images/sala-masajes.jpg", alt: "Sala de masajes de KORU con camilla, velas y luz cálida", formato: "normal" },
+    { src: "/images/exp-team-connection-day.jpg", alt: "Equipo haciendo Pilates Mat en el salón de KORU", formato: "ancho" },
   ] satisfies ItemGaleria[],
 
   /** Preparado para la Fase 3. No activar todavía. */

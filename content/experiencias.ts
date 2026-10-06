@@ -16,7 +16,7 @@ export const business = {
     titulo: "Tu equipo no necesita otro evento. Necesita una experiencia.",
     texto: "Bienestar, conexión y crecimiento en una experiencia 360°.",
     boton: "Descubre más",
-    imagen: { src: "/images/business-hero.jpg", alt: "Equipo de trabajo reunido al aire libre durante una experiencia de bienestar" },
+    imagen: { src: "/images/business-hero.jpg", alt: "Equipo de trabajo sentado en mats en el salón de KORU durante una experiencia de bienestar" },
   },
   preguntaNecesidad: "¿Qué quieres regalarle a tu equipo?",
   tituloExperiencias: "Experiencias que van más allá de un evento.",
@@ -113,7 +113,7 @@ export const experiencias: Experiencia[] = [
     duracion: "Media jornada (4 horas aprox.)",
     capacidad: 10,
     modalidades: [{ id: "unica", nombre: "Experiencia completa", precio: 1200000 }],
-    imagen: { src: "/images/exp-conecta-tu-equipo.jpg", alt: "Equipo conversando en una terraza rodeada de naturaleza" },
+    imagen: { src: "/images/exp-conecta-tu-equipo.jpg", alt: "Equipo conversando en los sillones de la zona social de KORU" },
   },
   {
     slug: "womens-wellness",
@@ -144,7 +144,7 @@ export const experiencias: Experiencia[] = [
         descripcion: "Profesional invitada (nutrición, psicología o salud) y obsequio SAISEI para cada participante.",
       },
     ],
-    imagen: { src: "/images/exp-womens-wellness.jpg", alt: "Grupo de mujeres en postura de yoga frente al mar" },
+    imagen: { src: "/images/exp-womens-wellness.jpg", alt: "Grupo de mujeres en una sesión de yoga y meditación en el salón de KORU" },
   },
   {
     slug: "mente-en-calma",
@@ -173,7 +173,7 @@ export const experiencias: Experiencia[] = [
         descripcion: "Acompañamiento de una psicóloga o coach de vida.",
       },
     ],
-    imagen: { src: "/images/exp-mente-en-calma.jpg", alt: "Grupo sentado en círculo meditando en un salón con plantas" },
+    imagen: { src: "/images/exp-mente-en-calma.jpg", alt: "Grupo sentado en círculo durante una dinámica de calma y conversación" },
   },
   {
     slug: "aqua-party",
@@ -199,7 +199,7 @@ export const experiencias: Experiencia[] = [
       { id: "almuerzo", nombre: "Con almuerzo saludable", precio: 1800000 },
     ],
     botonPrincipal: "Quiero celebrar en KORU",
-    imagen: { src: "/images/exp-aqua-party.jpg", alt: "Grupo celebrando dentro de una piscina al atardecer" },
+    imagen: { src: "/images/exp-aqua-party.jpg", alt: "Celebración corporativa en la piscina de KORU con globos dorados y Aqua Zumba" },
   },
   {
     slug: "team-connection-day",
@@ -219,7 +219,7 @@ export const experiencias: Experiencia[] = [
     duracion: "6 horas aprox.",
     capacidad: 10,
     modalidades: [{ id: "unica", nombre: "Experiencia completa", precio: 1200000 }],
-    imagen: { src: "/images/exp-team-connection-day.jpg", alt: "Equipo haciendo yoga al aire libre con luz de atardecer" },
+    imagen: { src: "/images/exp-team-connection-day.jpg", alt: "Equipo haciendo Pilates Mat en el salón de KORU" },
   },
 ];
 
@@ -228,7 +228,7 @@ export const experiencias: Experiencia[] = [
 export const gruposGrandes = {
   titulo: "¿Son más de 10?",
   texto: "Para grupos grandes diseñamos una jornada completa a la medida de tu empresa.",
-  imagen: { src: "/images/exp-grupos-grandes.jpg", alt: "Grupo grande reunido junto a una piscina al atardecer" },
+  imagen: { src: "/images/exp-grupos-grandes.jpg", alt: "Grupo grande de una empresa reunido en la zona social de KORU" },
   formatos: [
     { formato: "Jornada KORU Empresarial", participantes: "11 – 14", minimo: 11, maximo: 14, duracion: "Según propuesta", precioPersona: 185000 },
     { formato: "Jornada KORU Empresarial", participantes: "15 – 20", minimo: 15, maximo: 20, duracion: "Según propuesta", precioPersona: 170000 },

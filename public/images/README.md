@@ -1,6 +1,8 @@
 # Fotos del sitio KORU: guía para reemplazarlas
 
-Todas las fotos actuales son **de relleno** (Unsplash). Para reemplazar una, sube la foto real **con el mismo nombre de archivo** a esta carpeta. No hay que tocar código.
+Las fotos actuales son **las reales de KORU** (octubre de 2026). Para reemplazar una, sube la nueva **con el mismo nombre de archivo** a esta carpeta y actualiza su texto alternativo (`alt`) en `/content` si cambia lo que muestra. No hay que tocar código.
+
+Pendiente: el **video del hero** (ver al final).
 
 ## Requisitos técnicos (todas las fotos)
 
