@@ -22,6 +22,9 @@ const TIEMPO_MINIMO_MS = 4000;
 
 const json = (data: unknown, status = 200) => Response.json(data, { status });
 
+/** Limpia una variable de entorno: quita espacios y comillas que a veces se pegan al copiarla. */
+const limpiar = (valor?: string) => valor?.trim().replace(/^["'](.*)["']$/, "$1").trim() || undefined;
+
 export async function POST(request: Request) {
   const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "local";
   if (superaLimite(ip)) {
@@ -46,8 +49,8 @@ export async function POST(request: Request) {
     return json({ ok: true });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  const remitente = process.env.RESEND_FROM;
+  const apiKey = limpiar(process.env.RESEND_API_KEY);
+  const remitente = limpiar(process.env.RESEND_FROM);
   const koru = correoKoru(reserva);
   const cliente = correoCliente(reserva);
 
