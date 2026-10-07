@@ -18,8 +18,8 @@ export const promocion: Promocion = {
   eyebrow: "Tu primera clase",
   titulo: "Vive KORU por un día",
   texto: "Elige una clase y vívela como socio: el agua, el salón y el acompañamiento de nuestros especialistas.",
-  beneficio: "$50.000 abonables a tu primera mensualidad",
-  condiciones: "Si te unes en los siguientes 30 días.",
+  beneficio: "Tu primera clase por $25.000",
+  condiciones: "Abonables a tu primera mensualidad si te unes en los siguientes 30 días.",
   imagen: { src: "/images/clase-aqua-zumba.jpg", alt: "Clase de Aqua Zumba en la piscina de KORU" },
 
   boton: "Quiero mi clase",
@@ -40,5 +40,5 @@ export const promocion: Promocion = {
     texto: "Te escribiremos por WhatsApp para agendar tu clase. Si prefieres, escríbenos tú ahora mismo.",
     boton: "Agendar por WhatsApp",
   },
-  mensajeWhatsApp: "Hola KORU 🌿 Soy {nombre}. Quiero agendar mi primera clase.",
+  mensajeWhatsApp: "Hola KORU 🌿 Soy {nombre}. Quiero agendar mi primera clase de $25.000.",
 };
