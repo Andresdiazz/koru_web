@@ -140,6 +140,20 @@ Copia `.env.example` como `.env.local` (local) y configúralas también en Verce
 
 ---
 
+## Medición (Google Analytics 4 y píxel de Meta)
+
+Con `NEXT_PUBLIC_GA_ID` (y opcionalmente `NEXT_PUBLIC_META_PIXEL_ID`) en Vercel, el sitio registra estos eventos (`lib/analytics.ts`):
+
+| Evento GA4 | Cuándo | Evento Meta |
+|---|---|---|
+| `whatsapp_click` | Clic en cualquier botón o enlace de WhatsApp | Contact |
+| `generate_lead` | Solicitud de KORU Business enviada con éxito | Lead |
+| `como_llegar_click` | Clic en "Cómo llegar" | FindLocation |
+| `perfil_google_click` | Clic en "Ver perfil y reseñas en Google" | — |
+| `email_click` | Clic en un correo | — |
+
+Cada evento lleva la página (`pagina`) y el texto del botón (`boton`). En GA4, marca `whatsapp_click` y `generate_lead` como **eventos clave** (Administrar → Eventos clave) para usarlos como conversiones en Google Ads.
+
 ## Desplegar en Vercel
 
 1. Sube el proyecto a un repositorio de GitHub.

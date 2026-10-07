@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { MedicionClics } from "./MedicionClics";
 
 /**
  * Google Analytics 4 y píxel de Meta. Solo se cargan si las variables de entorno
@@ -12,6 +13,7 @@ export function Analytics() {
 
   return (
     <>
+      {(ga || pixel) && <MedicionClics />}
       {ga && (
         <>
           <Script src={`https://www.googletagmanager.com/gtag/js?id=${seguro(ga)}`} strategy="afterInteractive" />

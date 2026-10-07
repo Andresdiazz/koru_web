@@ -7,6 +7,7 @@ import { useMemo, useRef, useState, type FormEvent } from "react";
 import { Button, buttonClasses } from "@/components/ui/Button";
 import { Icon, WhatsAppIcon } from "@/components/ui/Icon";
 import { business } from "@/content/experiencias";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
 import {
   MAX_FECHAS,
@@ -142,6 +143,10 @@ export function ReservaForm() {
       };
       if (res.ok && cuerpo.ok) {
         setEstado({ tipo: "exito", simulado: cuerpo.simulado });
+        track("generate_lead", {
+          experiencia: resultado.success ? resultado.data.opcion : datos.opcion,
+          participantes: Number(datos.participantes) || undefined,
+        });
         requestAnimationFrame(() => contenedorRef.current?.scrollIntoView({ behavior: "smooth", block: "start" }));
         return;
       }
