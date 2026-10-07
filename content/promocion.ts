@@ -31,9 +31,9 @@ export const promocion: Promocion = {
   scrollPorcentaje: 15,
   diasEntreApariciones: 3,
 
-  pedirCorreo: false,
+  pedirCorreo: true,
   etiqueta: "promo-primera-clase",
-  autorizacion: "Autorizo a KORU a contactarme por WhatsApp sobre esta promoción y a tratar mis datos según la",
+  autorizacion: "Autorizo a KORU a contactarme por WhatsApp y correo sobre esta y otras promociones, y a tratar mis datos según la",
 
   gracias: {
     titulo: "¡Listo, {nombre}!",

@@ -1,13 +1,15 @@
+import { after } from "next/server";
 import { Resend } from "resend";
 import { promocion } from "@/content/promocion";
 import { sitio } from "@/content/sitio";
 import { correoLead } from "@/lib/email/plantillas";
 import { leadSchema } from "@/lib/lead";
 import { esBot, ipDe, json, limpiar, superaLimite } from "@/lib/servidor";
+import { ETIQUETA_WEB, enviarASysteme } from "@/lib/systeme";
 
 /**
  * Registro desde la ventana de promoción: valida, descarta bots y envía el contacto a KORU.
- * Cuando se conecte Systeme, aquí se agrega el contacto con la etiqueta de la promoción.
+ * Si hay correo y Systeme está configurado, el contacto entra con la etiqueta de la campaña.
  */
 export async function POST(request: Request) {
   if (superaLimite(ipDe(request), "lead")) {
@@ -38,6 +40,18 @@ export async function POST(request: Request) {
 
   // Bots: respondemos "ok" sin hacer nada
   if (esBot(lead.sitioWeb, lead.inicio, 2500)) return json({ ok: true });
+
+  // Embudo: Systeme (después de responder, sin hacer esperar a la persona)
+  if (lead.correo) {
+    after(() =>
+      enviarASysteme({
+        correo: lead.correo,
+        nombre: lead.nombre,
+        telefono: `+57${lead.whatsapp}`,
+        etiquetas: [ETIQUETA_WEB, promocion.etiqueta],
+      }),
+    );
+  }
 
   const apiKey = limpiar(process.env.RESEND_API_KEY);
   const remitente = limpiar(process.env.RESEND_FROM);

@@ -118,7 +118,7 @@ export function correoLead(lead: Lead, promo: { titulo: string; etiqueta: string
     ...(lead.correo ? ([["Correo", lead.correo]] as [string, string][]) : []),
     ["Promoción", `${promo.titulo} (${promo.etiqueta})`],
     ["Página", lead.pagina || "—"],
-    ["Autoriza contacto por WhatsApp", "Sí (Ley 1581)"],
+    ["Autoriza contacto por WhatsApp y correo", "Sí (Ley 1581)"],
   ];
   const asunto = `Nuevo contacto · ${promo.titulo} · ${lead.nombre}`;
   const html = marco(
