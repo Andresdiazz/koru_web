@@ -8,8 +8,8 @@ import { limpiar } from "@/lib/servidor";
  * - Nunca debe romper un formulario: los errores se registran y se devuelve false.
  *
  * Variables de entorno: SYSTEME_API_KEY (obligatoria para activar).
- * Opcionales: SYSTEME_CAMPO_NOMBRE y SYSTEME_CAMPO_TELEFONO (slugs de los campos; por defecto
- * first_name y phone_number, los campos estándar de Systeme).
+ * Opcionales: SYSTEME_CAMPO_NOMBRE, SYSTEME_CAMPO_APELLIDO y SYSTEME_CAMPO_TELEFONO (slugs de
+ * los campos; por defecto first_name, surname y phone_number, los estándar de Systeme).
  */
 
 const BASE = "https://api.systeme.io/api";
@@ -59,8 +59,12 @@ async function buscarContacto(correo: string) {
 
 /** Crea el contacto; si el correo ya existe, devuelve el id del existente. */
 async function crearOEncontrarContacto(c: ContactoSysteme) {
+  // Primer nombre en "first_name" (para saludar "Hola, Andrés") y el resto en "surname"
+  const [primerNombre, ...resto] = (c.nombre ?? "").trim().split(/\s+/);
+  const apellidos = resto.join(" ");
   const campos = [
-    c.nombre && { slug: process.env.SYSTEME_CAMPO_NOMBRE || "first_name", value: c.nombre },
+    primerNombre && { slug: process.env.SYSTEME_CAMPO_NOMBRE || "first_name", value: primerNombre },
+    apellidos && { slug: process.env.SYSTEME_CAMPO_APELLIDO || "surname", value: apellidos },
     c.telefono && { slug: process.env.SYSTEME_CAMPO_TELEFONO || "phone_number", value: c.telefono },
   ].filter(Boolean);
 
