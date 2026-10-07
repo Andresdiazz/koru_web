@@ -70,14 +70,14 @@ export const necesidades: Necesidad[] = [
   },
   {
     id: "desconectar",
-    label: "Desconectar",
-    descripcion: "Bajar el ritmo, liberar la mente y volver a lo esencial.",
+    label: "Liberar",
+    descripcion: "Bajar el ritmo del día y permitirse volver a lo esencial.",
     experiencia: "mente-en-calma",
   },
   {
     id: "bienestar",
     label: "Bienestar",
-    descripcion: "Regalar una pausa para cuidar, respirar y recargar.",
+    descripcion: "Regalar una experiencia para la introspección, el cuidado y la recarga.",
     experiencia: "womens-wellness",
   },
   {
@@ -100,7 +100,7 @@ export const experiencias: Experiencia[] = [
     necesidad: "conectar",
     nombre: "Conecta tu equipo fuera de la oficina",
     nombreCorto: "Conecta tu equipo",
-    frase: "Una pausa fuera de la oficina para volver a conectar.",
+    frase: "Permíteles conocerse en otro ambiente, diseñado específicamente para que se conozcan y alineen entre sí.",
     paraQuien: "Equipos comerciales, líderes y áreas pequeñas.",
     incluye: [
       "Dinámica de conexión",
@@ -120,7 +120,7 @@ export const experiencias: Experiencia[] = [
     necesidad: "bienestar",
     nombre: "KORU Women's Wellness",
     nombreCorto: "Women's Wellness",
-    frase: "Una experiencia para reconocerse, conectar y cuidar de sí mismas.",
+    frase: "Diseñada para mujeres que buscan reencontrarse y conectar cuerpo, mente y ser.",
     paraQuien: "Equipos femeninos.",
     incluye: [
       "Espacio privado en KORU",
@@ -151,7 +151,7 @@ export const experiencias: Experiencia[] = [
     necesidad: "desconectar",
     nombre: "KORU Mente en Calma",
     nombreCorto: "Mente en Calma",
-    frase: "Una pausa para bajar el ruido y volver a ti.",
+    frase: "Un espacio para sentir.",
     paraQuien: "Equipos con alta carga que necesitan bienestar emocional.",
     incluye: [
       "Presentación y conversación sobre las tensiones del día a día",
@@ -180,7 +180,7 @@ export const experiencias: Experiencia[] = [
     necesidad: "celebrar",
     nombre: "KORU Aqua Party Corporativa",
     nombreCorto: "Aqua Party",
-    frase: "Tu equipo merece celebrar diferente.",
+    frase: "Tu equipo merece un espacio de homenaje.",
     paraQuien: "Cumpleaños de empresa, cierre de semestre o de año, celebración de metas.",
     incluye: [
       "Decoración temática",
@@ -206,7 +206,7 @@ export const experiencias: Experiencia[] = [
     necesidad: "vivir-koru",
     nombre: "KORU Team Connection Day",
     nombreCorto: "Team Connection Day",
-    frase: "Horas de bienestar para desconectarse juntos.",
+    frase: "Una inversión de tiempo de calidad que se verá reflejada interna y externamente en tu equipo.",
     paraQuien: "Equipos que quieren salir de la rutina y fortalecer su conexión.",
     incluye: [
       "Actividad para romper el hielo",
@@ -236,7 +236,7 @@ export const gruposGrandes = {
     { formato: "Experiencia Fin de Año KORU", participantes: "20 – 30", minimo: 20, maximo: 30, duracion: "4 horas", precioPersona: 225000 },
   ] satisfies FormatoGrupoGrande[],
   finDeAnoIncluye:
-    "La Experiencia Fin de Año incluye todo lo de la Jornada, más bebida de bienvenida y ambientación, cierre de año guiado por Andrés, kit SAISEI para cada participante y video editado.",
+    "La Experiencia Fin de Año incluye todo lo de la Jornada, más bebida de bienvenida y ambientación, cierre de año guiado por Andrés Díaz, hidroterapeuta y fundador de AQUA FIT con más de 10 años en Cali, kit SAISEI para cada participante y video editado.",
 };
 
 /* ───────────── Bienestar todo el año ───────────── */
@@ -299,7 +299,7 @@ export const bienestarTodoElAno = {
 export const porQueKoru: RazonKoru[] = [
   { titulo: "Piscina terapéutica", texto: "No recreacional: cada actividad en el agua la guía un especialista." },
   { titulo: "Dos especialistas al frente", texto: "Andrés Díaz en hidroterapia y Sandra Alvarez en nutrición SAISEI." },
-  { titulo: "Privada y limitada", texto: "Recibimos un grupo a la vez. El club es solo para tu equipo." },
+  { titulo: "Privada y exclusiva", texto: "Recibimos un grupo a la vez. El club es solo para tu equipo." },
   { titulo: "Experiencia 360°", texto: "Agua, movimiento, conversación y alimentación en un mismo día." },
   { titulo: "Personalizable", texto: "Ajustamos actividades, tiempos y detalles a lo que necesita tu equipo." },
 ];

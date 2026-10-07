@@ -6,7 +6,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { WaveDivider } from "@/components/ui/WaveDivider";
 import { sitio } from "@/content/sitio";
 
-/** 2 · No somos un gimnasio: tres pilares + cifras. */
+/** 2 · Somos un club de bienestar: tres pilares + cifras. */
 export function ClubSection() {
   const { club } = sitio.home;
   return (

@@ -108,8 +108,8 @@ export const sitio = {
     },
     club: {
       eyebrow: "Conocer KORU",
-      titulo: "No somos un gimnasio.",
-      texto: "Somos un club de bienestar donde la experiencia es el producto: agua, movimiento y nutrición guiados por especialistas, en grupos pequeños y sin afanes.",
+      titulo: "Somos un club de bienestar.",
+      texto: "Aquí la experiencia es nuestro producto: agua, movimiento y nutrición guiados por especialistas, en grupos pequeños y sin afanes.",
       /** Cifras que se cuentan al aparecer. */
       cifras: [
         { valor: 10, prefijo: "+", sufijo: "", label: "años de hidroterapia en Cali" },

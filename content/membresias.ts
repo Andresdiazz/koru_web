@@ -18,7 +18,7 @@ export const membresias: ConfigMembresias = {
   tituloPagina: "Elige cómo vivir KORU.",
   imagen: { src: "/images/salon-yoga.jpg", alt: "Salón de yoga y Pilates de KORU con arcos iluminados y mats en el piso" },
   tituloComparativa: "Compara las membresías",
-  intro: "Tres formas de vivir KORU. Todas incluyen clases de salón ilimitadas y el acompañamiento de nuestros especialistas.",
+  intro: "Tres formas de hacer parte. Todas incluyen clases de salón ilimitadas y el acompañamiento de nuestros especialistas.",
   notaInscripcion: "Sin cuota de inscripción.",
   boton: "Agenda tu primera clase",
 
