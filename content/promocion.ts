@@ -27,8 +27,8 @@ export const promocion: Promocion = {
   pestana: "Tu primera clase",
 
   mostrarEn: ["/", "/experiencias-y-clases", "/membresias", "/contacto"],
-  retrasoSegundos: 12,
-  scrollPorcentaje: 35,
+  retrasoSegundos: 3,
+  scrollPorcentaje: 15,
   diasEntreApariciones: 3,
 
   pedirCorreo: false,
