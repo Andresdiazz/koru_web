@@ -4,7 +4,7 @@ import { sitio } from "@/content/sitio";
 import { correoCliente, correoKoru } from "@/lib/email/plantillas";
 import { erroresDe, reservaSchema } from "@/lib/reserva";
 import { esBot, ipDe, json, limpiar, superaLimite } from "@/lib/servidor";
-import { ETIQUETA_WEB, enviarASysteme } from "@/lib/systeme";
+import { enviarASysteme } from "@/lib/systeme";
 
 export async function POST(request: Request) {
   if (superaLimite(ipDe(request), "reserva")) {
@@ -36,7 +36,7 @@ export async function POST(request: Request) {
         correo: reserva.correo,
         nombre: reserva.nombre,
         telefono: `+57${reserva.whatsapp}`,
-        etiquetas: [ETIQUETA_WEB, "business-solicitud", `business-${reserva.opcion.split(":")[0]}`],
+        etiquetas: ["business-solicitud"],
       }),
     );
   }

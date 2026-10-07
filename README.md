@@ -90,7 +90,11 @@ Para una **campaña nueva**:
 
 Reglas: el beneficio es siempre valor agregado (una clase, un obsequio, una experiencia), nunca un descuento ni un "precio antes / ahora".
 
-**Systeme:** para crear contactos, Systeme necesita correo. Cuando se conecte, pon `pedirCorreo: true` y se agrega el campo. En Analytics, cada registro cuenta como `generate_lead` (con `origen: promocion`) y cada apertura como `promo_abierta`.
+**Systeme (embudo):** con `SYSTEME_API_KEY` en Vercel, cada registro de la ventana se crea en Systeme (o se actualiza si el correo ya existe) con la `etiqueta` de la campaña. En Systeme, crea una regla por campaña: *Etiqueta añadida → Suscribir a campaña*. Las solicitudes de Business que autorizan comunicaciones comerciales entran con la etiqueta `business-solicitud`. Para comprobar la conexión: `node --env-file=.env.local scripts/verificar-systeme.mjs`.
+
+**Límite del plan gratuito de Systeme:** no permite crear más etiquetas de las que ya existen. Antes de lanzar una campaña con etiqueta nueva, créala en Systeme (si el plan lo permite) o cambia de plan; si la etiqueta no existe y no se puede crear, el contacto se guarda igual pero sin etiqueta, y el error queda en los logs de Vercel.
+
+En Analytics, cada registro cuenta como `generate_lead` (con `origen: promocion`) y cada apertura como `promo_abierta`.
 
 ## Interruptores
 

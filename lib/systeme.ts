@@ -14,8 +14,11 @@ import { limpiar } from "@/lib/servidor";
 
 const BASE = "https://api.systeme.io/api";
 
-/** Etiqueta general para todo lo que llega desde la web. */
-export const ETIQUETA_WEB = "web-koru";
+/**
+ * Nota: el plan gratuito de Systeme limita cuántas etiquetas se pueden crear. Por eso cada
+ * origen usa una sola etiqueta (la de la campaña o "business-solicitud"). Con un plan pago,
+ * aquí se puede volver a sumar una etiqueta general como "web-koru".
+ */
 
 type ContactoSysteme = {
   correo: string;

@@ -5,7 +5,7 @@ import { sitio } from "@/content/sitio";
 import { correoLead } from "@/lib/email/plantillas";
 import { leadSchema } from "@/lib/lead";
 import { esBot, ipDe, json, limpiar, superaLimite } from "@/lib/servidor";
-import { ETIQUETA_WEB, enviarASysteme } from "@/lib/systeme";
+import { enviarASysteme } from "@/lib/systeme";
 
 /**
  * Registro desde la ventana de promoción: valida, descarta bots y envía el contacto a KORU.
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         correo: lead.correo,
         nombre: lead.nombre,
         telefono: `+57${lead.whatsapp}`,
-        etiquetas: [ETIQUETA_WEB, promocion.etiqueta],
+        etiquetas: [promocion.etiqueta],
       }),
     );
   }
