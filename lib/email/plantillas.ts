@@ -1,4 +1,5 @@
 import { sitio } from "@/content/sitio";
+import type { Lead } from "@/lib/lead";
 import { fechaLarga, getOpcion, whatsappVisible, type Reserva } from "@/lib/reserva";
 
 /* Correos con estilos en línea (los clientes de correo no leen CSS externo). */
@@ -106,5 +107,27 @@ ${filas(datosReserva(r))}
   const text = `Hola, ${nombre}.\n\n${intro}\n\n${datosReserva(r)
     .map(([k, v]) => `${k}: ${v.replace(/\n/g, ", ")}`)
     .join("\n")}\n\nEste correo no confirma la reserva. La reserva se confirma con el pago del 50% del valor total.\n\nKORU · ${sitio.ubicacion.sede}`;
+  return { asunto, html, text };
+}
+
+/** Aviso interno de un nuevo contacto desde la ventana de promoción. */
+export function correoLead(lead: Lead, promo: { titulo: string; etiqueta: string }) {
+  const datos: [string, string][] = [
+    ["Nombre", lead.nombre],
+    ["WhatsApp", whatsappVisible(lead.whatsapp)],
+    ...(lead.correo ? ([["Correo", lead.correo]] as [string, string][]) : []),
+    ["Promoción", `${promo.titulo} (${promo.etiqueta})`],
+    ["Página", lead.pagina || "—"],
+    ["Autoriza contacto por WhatsApp", "Sí (Ley 1581)"],
+  ];
+  const asunto = `Nuevo contacto · ${promo.titulo} · ${lead.nombre}`;
+  const html = marco(
+    `<h1 style="margin:0 0 8px;font-family:${serif};font-weight:400;font-size:30px;line-height:1.2">Nuevo contacto desde la web</h1>
+<p style="margin:0;color:${c.tostado}">${escapar(lead.nombre)} dejó sus datos en la promoción <strong>${escapar(promo.titulo)}</strong>. Escríbele pronto: los primeros minutos cuentan.</p>
+${filas(datos)}
+<p style="margin:0"><a href="https://wa.me/57${lead.whatsapp}" style="display:inline-block;background:${c.terracota};color:${c.marfil};text-decoration:none;padding:14px 28px;border-radius:999px;font-size:13px;letter-spacing:0.12em;text-transform:uppercase">Escribirle por WhatsApp</a></p>`,
+    `${lead.nombre} · ${promo.titulo}`,
+  );
+  const text = datos.map(([k, v]) => `${k}: ${v}`).join("\n");
   return { asunto, html, text };
 }

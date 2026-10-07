@@ -213,3 +213,41 @@ export type Campana = {
   escasez: string;
   boton: string;
 };
+
+/* ───────────── Promoción (ventana emergente) ───────────── */
+
+export type Promocion = {
+  /** Interruptor general */
+  activa: boolean;
+  /** Identificador único de la campaña. Cámbialo en cada promoción nueva para que vuelva a salir a todos. */
+  id: string;
+  eyebrow: string;
+  titulo: string;
+  texto: string;
+  /** Beneficio destacado (valor agregado, nunca un precio rebajado) */
+  beneficio: string;
+  condiciones?: string;
+  imagen: Imagen;
+  boton: string;
+  noGracias: string;
+  /** Texto de la pestaña que queda al cerrar la ventana */
+  pestana: string;
+  /** Páginas donde aparece (rutas exactas) */
+  mostrarEn: string[];
+  /** Aparece tras estos segundos o al bajar este % de la página, lo que pase primero */
+  retrasoSegundos: number;
+  scrollPorcentaje: number;
+  /** Días antes de volver a abrirse sola después de cerrarla */
+  diasEntreApariciones: number;
+  /** Fechas opcionales AAAA-MM-DD (hora de Colombia) */
+  desde?: string;
+  hasta?: string;
+  /** Pide correo además de nombre y WhatsApp (necesario para Systeme) */
+  pedirCorreo: boolean;
+  /** Etiqueta del contacto para el embudo (Systeme) y en el correo interno */
+  etiqueta: string;
+  autorizacion: string;
+  gracias: { titulo: string; texto: string; boton: string };
+  /** Mensaje de WhatsApp después de registrarse. {nombre} se reemplaza. */
+  mensajeWhatsApp: string;
+};

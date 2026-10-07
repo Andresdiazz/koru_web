@@ -10,7 +10,6 @@ import { PiscinaSection } from "@/components/home/PiscinaSection";
 import { PrimeraClaseSection } from "@/components/home/PrimeraClaseSection";
 import { TestimoniosSection } from "@/components/home/TestimoniosSection";
 import { UbicacionSection } from "@/components/home/UbicacionSection";
-import { PrimeraClaseFlotante } from "@/components/ui/PrimeraClaseFlotante";
 import { sitio } from "@/content/sitio";
 import { metaPagina } from "@/lib/seo";
 
@@ -36,7 +35,6 @@ export default function Home() {
       <GaleriaSection />
       <TestimoniosSection />
       <UbicacionSection />
-      <PrimeraClaseFlotante />
     </>
   );
 }

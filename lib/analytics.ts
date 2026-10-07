@@ -19,7 +19,8 @@ export type EventoKoru =
   | "generate_lead" // solicitud de KORU Business enviada con éxito
   | "como_llegar_click" // clic en "Cómo llegar"
   | "perfil_google_click" // clic para ver el perfil y las reseñas en Google
-  | "email_click"; // clic en un correo
+  | "email_click" // clic en un correo
+  | "promo_abierta"; // se abrió la ventana de promoción (sola o desde la pestaña)
 
 /** Equivalencia con los eventos estándar del píxel de Meta. */
 const eventoMeta: Partial<Record<EventoKoru, string>> = {

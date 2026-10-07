@@ -2,32 +2,10 @@ import { Resend } from "resend";
 import { sitio } from "@/content/sitio";
 import { correoCliente, correoKoru } from "@/lib/email/plantillas";
 import { erroresDe, reservaSchema } from "@/lib/reserva";
-
-/* ───────────── Límite de envíos (básico, en memoria por instancia) ───────────── */
-
-const VENTANA_MS = 10 * 60 * 1000;
-const MAX_ENVIOS = 5;
-const envios = new Map<string, number[]>();
-
-function superaLimite(ip: string) {
-  const ahora = Date.now();
-  const recientes = (envios.get(ip) ?? []).filter((t) => ahora - t < VENTANA_MS);
-  recientes.push(ahora);
-  envios.set(ip, recientes);
-  return recientes.length > MAX_ENVIOS;
-}
-
-/** Tiempo mínimo que tarda una persona en llenar el formulario. */
-const TIEMPO_MINIMO_MS = 4000;
-
-const json = (data: unknown, status = 200) => Response.json(data, { status });
-
-/** Limpia una variable de entorno: quita espacios y comillas que a veces se pegan al copiarla. */
-const limpiar = (valor?: string) => valor?.trim().replace(/^["'](.*)["']$/, "$1").trim() || undefined;
+import { esBot, ipDe, json, limpiar, superaLimite } from "@/lib/servidor";
 
 export async function POST(request: Request) {
-  const ip = request.headers.get("x-forwarded-for")?.split(",")[0]?.trim() || request.headers.get("x-real-ip") || "local";
-  if (superaLimite(ip)) {
+  if (superaLimite(ipDe(request), "reserva")) {
     return json({ ok: false, mensaje: "Recibimos varias solicitudes seguidas. Intenta de nuevo en unos minutos o escríbenos por WhatsApp." }, 429);
   }
 
@@ -45,7 +23,7 @@ export async function POST(request: Request) {
   const reserva = resultado.data;
 
   // Honeypot o envío demasiado rápido: respondemos "ok" sin enviar nada para no dar pistas al bot.
-  if (reserva.sitioWeb || (reserva.inicio && Date.now() - reserva.inicio < TIEMPO_MINIMO_MS)) {
+  if (esBot(reserva.sitioWeb, reserva.inicio)) {
     return json({ ok: true });
   }
 

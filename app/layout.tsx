@@ -4,6 +4,7 @@ import { Analytics } from "@/components/layout/Analytics";
 import { Footer } from "@/components/layout/Footer";
 import { Header } from "@/components/layout/Header";
 import { WhatsAppFloat } from "@/components/layout/WhatsAppFloat";
+import { Promocion } from "@/components/promocion/Promocion";
 import { MotionProvider } from "@/components/motion/MotionProvider";
 import { sitio } from "@/content/sitio";
 import { JsonLd, jsonLdClub } from "@/lib/seo";
@@ -66,6 +67,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           </main>
           <Footer />
           <WhatsAppFloat />
+          <Promocion />
         </MotionProvider>
         <JsonLd data={jsonLdClub()} />
         <Analytics />

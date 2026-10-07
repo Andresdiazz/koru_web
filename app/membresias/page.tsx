@@ -4,7 +4,6 @@ import { ComparisonTable } from "@/components/membresias/ComparisonTable";
 import { MembershipCard } from "@/components/membresias/MembershipCard";
 import { SinCuotaChip } from "@/components/membresias/SinCuotaChip";
 import { PrimeraClaseSection } from "@/components/home/PrimeraClaseSection";
-import { PrimeraClaseFlotante } from "@/components/ui/PrimeraClaseFlotante";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
@@ -49,7 +48,6 @@ export default function MembresiasPage() {
       </Section>
 
       <PrimeraClaseSection />
-      <PrimeraClaseFlotante />
     </>
   );
 }

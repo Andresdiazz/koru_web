@@ -3,7 +3,6 @@ import { metaPagina } from "@/lib/seo";
 import Image from "next/image";
 import { MasajesSection } from "@/components/clases/MasajesSection";
 import { PrimeraClaseSection } from "@/components/home/PrimeraClaseSection";
-import { PrimeraClaseFlotante } from "@/components/ui/PrimeraClaseFlotante";
 import { Parallax } from "@/components/motion/Parallax";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { ButtonLink } from "@/components/ui/Button";
@@ -109,7 +108,6 @@ export default function ExperienciasYClasesPage() {
 
       <MasajesSection />
       <PrimeraClaseSection />
-      <PrimeraClaseFlotante />
     </>
   );
 }

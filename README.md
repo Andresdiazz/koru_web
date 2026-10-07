@@ -77,6 +77,21 @@ export const campana = {
 
 ---
 
+## Ventana de promoción (embudo)
+
+Archivo: `content/promocion.ts`. Es la ventana emergente que aparece en el home, Experiencias y clases, Membresías y Contacto, pide **nombre y WhatsApp** y le envía el contacto a `reservas@koruclub.co`. Al cerrarla queda una pestaña abajo a la izquierda para volver a abrirla.
+
+Para una **campaña nueva**:
+1. Cambia `id` (por ejemplo `"fin-de-ano-2026"`). Así vuelve a aparecer a todas las personas, incluso a las que cerraron la anterior.
+2. Cambia `eyebrow`, `titulo`, `texto`, `beneficio`, `condiciones`, `imagen`, `boton`, `pestana` y `mensajeWhatsApp`.
+3. Cambia `etiqueta`: identifica la campaña en el correo y, más adelante, en Systeme.
+4. Opcional: `desde` y `hasta` (AAAA-MM-DD) para que se active y se apague sola; `mostrarEn` para elegir las páginas; `retrasoSegundos` y `scrollPorcentaje` para cuándo aparece; `diasEntreApariciones` para cuánto esperar antes de volver a abrirse sola después de cerrarla.
+5. `activa: false` la apaga.
+
+Reglas: el beneficio es siempre valor agregado (una clase, un obsequio, una experiencia), nunca un descuento ni un "precio antes / ahora".
+
+**Systeme:** para crear contactos, Systeme necesita correo. Cuando se conecte, pon `pedirCorreo: true` y se agrega el campo. En Analytics, cada registro cuenta como `generate_lead` (con `origen: promocion`) y cada apertura como `promo_abierta`.
+
 ## Interruptores
 
 ### Masajes: `content/masajes.ts`
