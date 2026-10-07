@@ -1,8 +1,8 @@
 /**
  * Textos legales.
  * - Términos KORU Business: texto aprobado, usar tal cual.
- * - Privacidad y tratamiento de datos: borradores redactados conforme a la Ley 1581 de 2012.
- *   Recomendado: revisión de un abogado antes de darlos por definitivos.
+ * - Privacidad y tratamiento de datos: conforme a la Ley 1581 de 2012, aprobadas por el abogado
+ *   de KORU (octubre de 2026). Cualquier cambio de fondo debe pasar de nuevo por revisión legal.
  */
 
 import { sitio } from "@/content/sitio";

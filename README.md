@@ -171,12 +171,17 @@ Cada evento lleva la página (`pagina`) y el texto del botón (`boton`). En GA4,
 
 ---
 
-## Antes de lanzar (pendientes)
+## Estado del lanzamiento
 
-- [ ] Razón social y NIT en `content/legal.ts` (`responsable`), y revisión de las políticas por un abogado.
-- [ ] Autorización de las personas de los testimonios: en `content/sitio.ts` solo se publican los que tienen `autorizado: true`.
-- [ ] Fotos reales y video del hero (`public/images/README.md`).
-- [ ] Llave de Resend con el dominio `koruclub.co` verificado y prueba real de punta a punta del formulario.
+- [x] Razón social, NIT y políticas legales aprobadas por el abogado.
+- [x] Testimonios autorizados (en `content/sitio.ts` solo se publican los que tienen `autorizado: true`).
+- [x] Fotos reales y video del hero.
+- [x] Resend con el dominio `koruclub.co` verificado y formulario probado de punta a punta.
+- [x] Google Search Console, Perfil de Empresa en Google y Google Analytics 4.
+
+### Video del hero
+
+`public/video/piscina-hero.mp4` (1920 × 1080, para escritorio) y `piscina-hero-movil.mp4` (1280 × 720, para pantallas de menos de 768 px). Ambos en H.264, sin audio y con fundido final para que el loop no salte. Si se reemplaza, mantener los dos archivos con esos nombres y por debajo de 4 MB y 2 MB.
 
 ### Testimonios
 

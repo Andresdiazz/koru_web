@@ -16,6 +16,7 @@ export function HomeHero() {
   const { hero } = sitio.home;
   const hayVideo = existe(hero.video.mp4);
   const hayWebm = existe(hero.video.webm);
+  const hayMovil = existe(hero.video.mp4Movil);
 
   return (
     <section className="relative isolate flex min-h-svh items-end overflow-hidden bg-espresso text-marfil">
@@ -29,11 +30,17 @@ export function HomeHero() {
           quality={60}
           className="animate-slow-zoom object-cover"
         />
-        {hayVideo && <HeroVideo mp4={hero.video.mp4} webm={hayWebm ? hero.video.webm : undefined} />}
+        {hayVideo && (
+          <HeroVideo
+            mp4={hero.video.mp4}
+            mp4Movil={hayMovil ? hero.video.mp4Movil : undefined}
+            webm={hayWebm ? hero.video.webm : undefined}
+          />
+        )}
       </div>
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(44_26_14/0.6)_0%,rgb(44_26_14/0.15)_30%,rgb(44_26_14/0.35)_60%,rgb(44_26_14/0.92)_100%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(44_26_14/0.6)_0%,rgb(44_26_14/0.3)_30%,rgb(44_26_14/0.5)_55%,rgb(44_26_14/0.93)_100%)]"
       />
 
       <Container className="pt-40 pb-24 md:pb-28">

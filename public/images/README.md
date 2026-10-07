@@ -2,7 +2,7 @@
 
 Las fotos actuales son **las reales de KORU** (octubre de 2026). Para reemplazar una, sube la nueva **con el mismo nombre de archivo** a esta carpeta y actualiza su texto alternativo (`alt`) en `/content` si cambia lo que muestra. No hay que tocar código.
 
-Pendiente: el **video del hero** (ver al final).
+El **video del hero** ya está en `/public/video/` (ver al final).
 
 ## Requisitos técnicos (todas las fotos)
 

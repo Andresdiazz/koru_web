@@ -104,7 +104,7 @@ export const sitio = {
       botonSecundario: "Conoce el club",
       imagen: { src: "/images/piscina-hero.jpg", alt: "Piscina terapéutica de KORU con columnas, agua turquesa y luz cálida" },
       /** Video en loop. Si el archivo no existe en /public, se muestra solo la imagen. */
-      video: { mp4: "/video/piscina-hero.mp4", webm: "/video/piscina-hero.webm" },
+      video: { mp4: "/video/piscina-hero.mp4", mp4Movil: "/video/piscina-hero-movil.mp4", webm: "/video/piscina-hero.webm" },
     },
     club: {
       eyebrow: "Conocer KORU",
