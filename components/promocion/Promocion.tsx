@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, m } from "framer-motion";
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState, type FormEvent } from "react";
@@ -16,6 +16,16 @@ import { whatsappUrl } from "@/lib/whatsapp";
 type Memoria = { cerradoEn?: number; registrado?: boolean };
 const CLAVE = `koru-promo:${promo.id}`;
 const DIA_MS = 24 * 60 * 60 * 1000;
+const FOTO = { src: promo.imagen.src, alt: promo.imagen.alt, sizes: "(min-width: 768px) 24rem, calc(100vw - 2rem)", quality: 75 };
+
+/** Descarga la foto antes de abrir la ventana: así aparece completa y no retrasa la carga de la página. */
+function precargarFoto() {
+  const { props } = getImageProps({ ...FOTO, fill: true });
+  const img = new window.Image();
+  img.sizes = props.sizes ?? "";
+  if (props.srcSet) img.srcset = props.srcSet;
+  img.src = props.src;
+}
 
 function leerMemoria(): Memoria {
   try {
@@ -86,6 +96,7 @@ export function Promocion() {
   // Apertura automática: tras X segundos o al bajar Y % de la página (se revisa la memoria en cada intento)
   useEffect(() => {
     if (!aplica || leerMemoria().registrado) return;
+    if (puedeAbrirSola()) precargarFoto();
     const intentar = () => {
       if (puedeAbrirSola()) abrir("auto");
     };
@@ -169,7 +180,7 @@ export function Promocion() {
       <dialog
         ref={dialogRef}
         aria-labelledby="promo-titulo"
-        className="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-3xl overflow-y-auto rounded-[var(--radius-card)] bg-crema p-0 text-espresso shadow-[0_40px_80px_-20px_rgb(44_26_14/0.6)] backdrop:bg-espresso/70 backdrop:backdrop-blur-sm open:grid md:grid-cols-[1fr_1.15fr]"
+        className="m-auto max-h-[calc(100dvh-2rem)] w-[calc(100vw-2rem)] max-w-3xl overflow-y-auto rounded-[var(--radius-card)] bg-crema p-0 text-espresso shadow-[0_40px_80px_-20px_rgb(44_26_14/0.6)] backdrop:bg-espresso/70 backdrop:backdrop-blur-sm open:grid open:animate-promo-in md:grid-cols-[1fr_1.15fr]"
         onClick={(e) => e.target === e.currentTarget && cerrar()}
         onCancel={(e) => {
           e.preventDefault();
@@ -177,7 +188,7 @@ export function Promocion() {
         }}
       >
         <div className="relative h-40 overflow-hidden sm:h-52 md:h-auto md:min-h-[30rem]">
-          <Image src={promo.imagen.src} alt={promo.imagen.alt} fill sizes="(min-width: 768px) 24rem, 100vw" quality={75} className="object-cover" />
+          <Image {...FOTO} alt={FOTO.alt} fill className="object-cover" />
           <div aria-hidden className="absolute inset-0 bg-[linear-gradient(180deg,transparent_50%,rgb(44_26_14/0.35)_100%)]" />
         </div>
 
