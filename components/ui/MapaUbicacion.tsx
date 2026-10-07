@@ -1,7 +1,7 @@
 import { ButtonLink } from "@/components/ui/Button";
 import { Icon, WhatsAppIcon } from "@/components/ui/Icon";
 import { sitio } from "@/content/sitio";
-import { comoLlegarUrl, mapaEmbedUrl } from "@/lib/mapa";
+import { comoLlegarUrl, mapaEmbedUrl, perfilGoogleUrl } from "@/lib/mapa";
 import { whatsappUrl } from "@/lib/whatsapp";
 
 /** Dirección, horarios, botones y mapa. Se usa en el home y en /contacto. */
@@ -40,6 +40,15 @@ export function MapaUbicacion() {
             {ubicacion.botonWhatsApp}
           </ButtonLink>
         </div>
+        <a
+          href={perfilGoogleUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="mt-5 inline-flex min-h-12 items-center gap-2 self-start text-sm font-medium text-terracota underline-offset-4 hover:underline"
+        >
+          Ver perfil y reseñas en Google
+          <Icon nombre="flecha" className="h-4 w-4" />
+        </a>
       </div>
       <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--radius-card)] bg-arena shadow-(--shadow-card) lg:aspect-auto lg:min-h-[26rem]">
         <iframe

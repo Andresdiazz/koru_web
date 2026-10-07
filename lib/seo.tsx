@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { perfilGoogleUrl } from "@/lib/mapa";
 import { sitio } from "@/content/sitio";
 
 const OG_POR_DEFECTO = { url: "/images/og-koru.jpg", width: 1200, height: 630, alt: "KORU · Club de bienestar con piscina terapéutica en Cali" };
@@ -70,6 +71,8 @@ export function jsonLdClub() {
       addressCountry: sitio.ubicacion.pais,
     },
     areaServed: { "@type": "City", name: "Cali" },
+    geo: { "@type": "GeoCoordinates", latitude: sitio.ubicacion.googleMaps.lat, longitude: sitio.ubicacion.googleMaps.lng },
+    hasMap: perfilGoogleUrl,
     openingHoursSpecification: sitio.horarios
       .filter((h) => h.schema)
       .map((h) => ({
@@ -78,7 +81,7 @@ export function jsonLdClub() {
         opens: h.schema!.abre,
         closes: h.schema!.cierra,
       })),
-    sameAs: Object.values(sitio.redes).filter((r) => !/\.com\/?$/.test(r)), // solo perfiles reales (no la raíz de la red)
+    sameAs: [perfilGoogleUrl, ...Object.values(sitio.redes).filter((r) => !/\.com\/?$/.test(r))],
     amenityFeature: [{ "@type": "LocationFeatureSpecification", name: "Piscina terapéutica", value: true }],
   };
 }

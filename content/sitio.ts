@@ -44,8 +44,8 @@ export const sitio = {
     ciudad: "Cali",
     region: "Valle del Cauca",
     pais: "CO",
-    /** Búsqueda que usa el mapa embebido y el botón "Cómo llegar" */
-    consultaMapa: "Carrera 85A #15-59, El Ingenio, Cali, Valle del Cauca, Colombia",
+    /** Perfil de Empresa en Google: identificador (CID) y coordenadas del pin */
+    googleMaps: { cid: "8273799209562172129", lat: 3.3820276, lng: -76.5297278 },
   },
 
   /**
