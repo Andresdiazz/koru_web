@@ -7,6 +7,7 @@ import { Container } from "@/components/ui/Section";
 import { membresias } from "@/content/membresias";
 import { sitio } from "@/content/sitio";
 import { whatsappUrl } from "@/lib/whatsapp";
+import { HeroParallax } from "./HeroParallax";
 import { HeroVideo } from "./HeroVideo";
 
 const existe = (ruta?: string) => !!ruta && existsSync(path.join(process.cwd(), "public", ruta));
@@ -20,7 +21,7 @@ export function HomeHero() {
 
   return (
     <section className="relative isolate flex min-h-svh items-end overflow-hidden bg-espresso text-marfil">
-      <div className="absolute inset-0 -z-20">
+      <HeroParallax>
         <Image
           src={hero.imagen.src}
           alt={hero.imagen.alt}
@@ -37,10 +38,10 @@ export function HomeHero() {
             webm={hayWebm ? hero.video.webm : undefined}
           />
         )}
-      </div>
+      </HeroParallax>
       <div
         aria-hidden
-        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(44_26_14/0.6)_0%,rgb(44_26_14/0.3)_30%,rgb(44_26_14/0.5)_55%,rgb(44_26_14/0.93)_100%)]"
+        className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgb(44_26_14/0.6)_0%,rgb(44_26_14/0.15)_30%,rgb(44_26_14/0.35)_60%,rgb(44_26_14/0.92)_100%)]"
       />
 
       <Container className="pt-40 pb-24 md:pb-28">

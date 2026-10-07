@@ -175,13 +175,13 @@ Cada evento lleva la página (`pagina`) y el texto del botón (`boton`). En GA4,
 
 - [x] Razón social, NIT y políticas legales aprobadas por el abogado.
 - [x] Testimonios autorizados (en `content/sitio.ts` solo se publican los que tienen `autorizado: true`).
-- [x] Fotos reales y video del hero.
+- [x] Fotos reales. El hero usa la foto de la piscina con parallax (sin video, por decisión de KORU).
 - [x] Resend con el dominio `koruclub.co` verificado y formulario probado de punta a punta.
 - [x] Google Search Console, Perfil de Empresa en Google y Google Analytics 4.
 
-### Video del hero
+### Video del hero (opcional, hoy desactivado)
 
-`public/video/piscina-hero.mp4` (1920 × 1080, para escritorio) y `piscina-hero-movil.mp4` (1280 × 720, para pantallas de menos de 768 px). Ambos en H.264, sin audio y con fundido final para que el loop no salte. Si se reemplaza, mantener los dos archivos con esos nombres y por debajo de 4 MB y 2 MB.
+El hero muestra `piscina-hero.jpg` con zoom lento y parallax. Si en el futuro se quiere un video, basta con subir `public/video/piscina-hero.mp4` (1920 × 1080, menos de 4 MB) y `piscina-hero-movil.mp4` (1280 × 720, menos de 2 MB), en H.264 y sin audio: el sitio los detecta solos al compilar. Sin esos archivos, se ve la foto.
 
 ### Testimonios
 
