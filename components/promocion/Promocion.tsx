@@ -61,7 +61,8 @@ export function Promocion() {
   const [tapada, setTapada] = useState(false);
   const [estado, setEstado] = useState<Estado>({ tipo: "form" });
   const [errores, setErrores] = useState<Record<string, string>>({});
-  const [inicio, setInicio] = useState(0);
+  // Momento en que cargó la página (anti-bots: un envío instantáneo no es de una persona)
+  const [inicio] = useState(() => Date.now());
 
   const aplica = useMemo(() => vigente() && promo.mostrarEn.includes(pathname), [pathname]);
 
@@ -70,7 +71,6 @@ export function Promocion() {
     if (!dialog || dialog.open || document.querySelector("dialog[open]")) return;
     dialog.showModal();
     setAbierta(true);
-    setInicio(Date.now());
     track("promo_abierta", { promocion: promo.id, origen });
   }, []);
 
@@ -132,7 +132,7 @@ export function Promocion() {
       acepta: f.get("acepta") === "on",
       promocion: promo.id,
       pagina: pathname,
-      sitioWeb: String(f.get("sitio_web") ?? ""),
+      sitioWeb: String(f.get("kx_referencia") ?? ""),
       inicio,
     };
     setEstado({ tipo: "enviando" });
@@ -222,8 +222,9 @@ export function Promocion() {
 
               <form onSubmit={enviar} noValidate className="mt-6 space-y-3">
                 <div aria-hidden className="absolute -left-[9999px] h-px w-px overflow-hidden">
-                  <label htmlFor="promo-sitio-web">No llenar</label>
-                  <input id="promo-sitio-web" name="sitio_web" tabIndex={-1} autoComplete="off" />
+                  {/* Campo trampa con un nombre que el autocompletado de los navegadores no reconoce */}
+                  <label htmlFor="promo-kx">Deja este campo vacío</label>
+                  <input id="promo-kx" name="kx_referencia" tabIndex={-1} autoComplete="off" data-1p-ignore data-lpignore="true" />
                 </div>
                 <div>
                   <label htmlFor="promo-nombre" className="sr-only">

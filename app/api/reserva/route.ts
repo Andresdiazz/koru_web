@@ -3,7 +3,7 @@ import { Resend } from "resend";
 import { sitio } from "@/content/sitio";
 import { correoCliente, correoKoru } from "@/lib/email/plantillas";
 import { erroresDe, reservaSchema } from "@/lib/reserva";
-import { esBot, ipDe, json, limpiar, superaLimite } from "@/lib/servidor";
+import { ipDe, json, limpiar, motivoBot, superaLimite } from "@/lib/servidor";
 import { enviarASysteme } from "@/lib/systeme";
 
 export async function POST(request: Request) {
@@ -25,7 +25,9 @@ export async function POST(request: Request) {
   const reserva = resultado.data;
 
   // Honeypot o envío demasiado rápido: respondemos "ok" sin enviar nada para no dar pistas al bot.
-  if (esBot(reserva.sitioWeb, reserva.inicio)) {
+  const bot = motivoBot(reserva.sitioWeb, reserva.inicio);
+  if (bot) {
+    console.warn(`[reserva] descartado como bot (${bot}) · ${reserva.empresa}`);
     return json({ ok: true });
   }
 

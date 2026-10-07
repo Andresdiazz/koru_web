@@ -20,10 +20,18 @@ export function superaLimite(ip: string, formulario: string) {
 /** Tiempo mínimo que tarda una persona en llenar un formulario (anti-bots). */
 export const TIEMPO_MINIMO_MS = 4000;
 
-/** true si el envío parece de un bot: llenó el campo trampa o fue demasiado rápido. */
-export function esBot(sitioWeb?: string, inicio?: number, minimoMs = TIEMPO_MINIMO_MS) {
-  return !!sitioWeb || (!!inicio && Date.now() - inicio < minimoMs);
+/**
+ * Motivo por el que el envío parece de un bot (llenó el campo trampa o fue demasiado rápido),
+ * o null si parece de una persona.
+ */
+export function motivoBot(sitioWeb?: string, inicio?: number, minimoMs = TIEMPO_MINIMO_MS) {
+  if (sitioWeb) return "campo trampa lleno";
+  if (inicio && Date.now() - inicio < minimoMs) return `enviado en ${Date.now() - inicio} ms`;
+  return null;
 }
+
+/** true si el envío parece de un bot. */
+export const esBot = (sitioWeb?: string, inicio?: number, minimoMs = TIEMPO_MINIMO_MS) => motivoBot(sitioWeb, inicio, minimoMs) !== null;
 
 export const json = (data: unknown, status = 200) => Response.json(data, { status });
 

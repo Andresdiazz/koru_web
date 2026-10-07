@@ -4,7 +4,7 @@ import { promocion } from "@/content/promocion";
 import { sitio } from "@/content/sitio";
 import { correoLead } from "@/lib/email/plantillas";
 import { leadSchema } from "@/lib/lead";
-import { esBot, ipDe, json, limpiar, superaLimite } from "@/lib/servidor";
+import { ipDe, json, limpiar, motivoBot, superaLimite } from "@/lib/servidor";
 import { enviarASysteme } from "@/lib/systeme";
 
 /**
@@ -39,7 +39,12 @@ export async function POST(request: Request) {
   }
 
   // Bots: respondemos "ok" sin hacer nada
-  if (esBot(lead.sitioWeb, lead.inicio, 2500)) return json({ ok: true });
+  // (el tiempo se mide desde que cargó la página: con autocompletado una persona real llena rápido)
+  const bot = motivoBot(lead.sitioWeb, lead.inicio, 1500);
+  if (bot) {
+    console.warn(`[lead] descartado como bot (${bot}) · promoción ${lead.promocion} · página ${lead.pagina}`);
+    return json({ ok: true });
+  }
 
   // Embudo: Systeme (después de responder, sin hacer esperar a la persona)
   if (lead.correo) {
