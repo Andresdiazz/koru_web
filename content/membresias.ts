@@ -97,7 +97,7 @@ export const membresias: ConfigMembresias = {
 
   primeraClase: {
     titulo: "Tu primera clase",
-    texto: "Elige una clase del horario y vívela como socio por un día.",
+    texto: "Elige una clase y vívela como socio por un día.",
     precio: 50000,
     condicion: "abonables a tu primera mensualidad",
     plazo: "si te unes en los siguientes 30 días.",

@@ -120,7 +120,7 @@ export const experiencias: Experiencia[] = [
     necesidad: "bienestar",
     nombre: "KORU Women's Wellness",
     nombreCorto: "Women's Wellness",
-    frase: "Diseñada para mujeres que buscan reencontrarse y conectar cuerpo, mente y ser.",
+    frase: "Diseñada solo para mujeres que buscan reencontrarse y conectar cuerpo, mente y ser.",
     paraQuien: "Equipos femeninos.",
     incluye: [
       "Espacio privado en KORU",
@@ -236,7 +236,7 @@ export const gruposGrandes = {
     { formato: "Experiencia Fin de Año KORU", participantes: "20 – 30", minimo: 20, maximo: 30, duracion: "4 horas", precioPersona: 225000 },
   ] satisfies FormatoGrupoGrande[],
   finDeAnoIncluye:
-    "La Experiencia Fin de Año incluye todo lo de la Jornada, más bebida de bienvenida y ambientación, cierre de año guiado por Andrés Díaz, hidroterapeuta y fundador de AQUA FIT con más de 10 años en Cali, kit SAISEI para cada participante y video editado.",
+    "La Experiencia Fin de Año incluye todo lo de la Jornada, más bebida de bienvenida y ambientación, cierre de año guiado por Andrés Díaz, hidroterapeuta y fundador de AQUA FIT con más de 10 años en Cali, kit SAISEI para cada participante y video de la experiencia.",
 };
 
 /* ───────────── Bienestar todo el año ───────────── */

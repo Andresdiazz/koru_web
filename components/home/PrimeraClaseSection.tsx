@@ -11,7 +11,7 @@ import { whatsappUrl } from "@/lib/whatsapp";
 export function PrimeraClaseSection() {
   const pc = membresias.primeraClase;
   return (
-    <Section tono="arena" className="py-20 md:py-28">
+    <Section tono="arena" id="primera-clase" className="scroll-mt-16 py-20 md:py-28">
       <Container>
         <div className="grid items-center gap-10 lg:grid-cols-[1.2fr_1fr] lg:gap-20">
           <Reveal>

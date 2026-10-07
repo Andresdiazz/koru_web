@@ -50,10 +50,12 @@ export function Carousel({
     el.scrollBy({ left: dir * paso, behavior: "smooth" });
   };
 
-  const flecha = cn(
-    "inline-flex h-12 w-12 items-center justify-center rounded-full border transition-colors disabled:opacity-30",
-    oscuro ? "border-caramelo/60 text-marfil hover:bg-caramelo/20" : "border-caramelo text-espresso hover:bg-caramelo/15",
-  );
+  const flecha = (visible: boolean) =>
+    cn(
+      "absolute top-1/2 z-10 hidden h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full shadow-(--shadow-card-hover) backdrop-blur-sm transition-[opacity,transform,background-color] duration-300 md:flex",
+      oscuro ? "bg-espresso/80 text-marfil ring-1 ring-caramelo/50 hover:bg-espresso" : "bg-marfil/90 text-espresso ring-1 ring-arena hover:bg-marfil",
+      visible ? "opacity-100" : "pointer-events-none opacity-0",
+    );
 
   return (
     <div className={cn("relative", className)}>
@@ -65,16 +67,27 @@ export function Carousel({
       >
         {children}
       </ul>
-      <div className="mx-auto mt-6 hidden max-w-7xl justify-end gap-3 px-12 md:flex">
-        <button type="button" className={flecha} onClick={() => mover(-1)} disabled={!puedeAtras}>
-          <Icon nombre="flecha" className="h-5 w-5 rotate-180" />
-          <span className="sr-only">Anterior</span>
-        </button>
-        <button type="button" className={flecha} onClick={() => mover(1)} disabled={!puedeAdelante}>
-          <Icon nombre="flecha" className="h-5 w-5" />
-          <span className="sr-only">Siguiente</span>
-        </button>
-      </div>
+      {/* Flechas sobre las fotos, a media altura: no las tapa el botón flotante de WhatsApp */}
+      <button
+        type="button"
+        className={cn(flecha(puedeAtras), "left-4 hover:-translate-x-0.5 lg:left-8")}
+        onClick={() => mover(-1)}
+        aria-hidden={!puedeAtras}
+        tabIndex={puedeAtras ? 0 : -1}
+      >
+        <Icon nombre="flecha" className="h-5 w-5 rotate-180" />
+        <span className="sr-only">Anterior</span>
+      </button>
+      <button
+        type="button"
+        className={cn(flecha(puedeAdelante), "right-4 hover:translate-x-0.5 lg:right-8")}
+        onClick={() => mover(1)}
+        aria-hidden={!puedeAdelante}
+        tabIndex={puedeAdelante ? 0 : -1}
+      >
+        <Icon nombre="flecha" className="h-5 w-5" />
+        <span className="sr-only">Siguiente</span>
+      </button>
     </div>
   );
 }

@@ -117,7 +117,7 @@ export default function SistemaDeDiseno() {
             <div className="space-y-5 text-marfil/85">
               <p className="text-xl">DM Sans para textos, botones, menús y formularios. Clara y cálida, con mucho aire entre líneas.</p>
               <p>
-                Un club de bienestar boutique en Cali con una piscina terapéutica donde cada sesión la guía un especialista.
+                Un club de bienestar boutique en Cali con piscina terapéutica donde cada sesión la guía un especialista.
                 Texto de párrafo en 16px con interlineado 1.65 para lectura cómoda en celular.
               </p>
               <p className="eyebrow text-caramelo">DM Sans Regular 400 · Medium 500</p>
@@ -202,7 +202,7 @@ export default function SistemaDeDiseno() {
           <LineByLine
             as="blockquote"
             className="max-w-4xl font-display text-4xl leading-[1.15] font-light md:text-6xl"
-            lineas={["“En el agua nadie queda por fuera:", "quien no corre, flota;", "quien tiene una lesión, se mueve sin dolor.”"]}
+            lineas={["“En el agua nadie queda por fuera:", "cada cuerpo encuentra", "su propio ritmo.”"]}
           />
         </Container>
       </section>

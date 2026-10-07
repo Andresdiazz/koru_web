@@ -12,7 +12,7 @@ export const campana: Campana = {
   activa: true,
   titulo: "Cierra el año diferente",
   texto: "Este año, regala bienestar. Regala conexión. Regala una experiencia.",
-  beneficio: "Las experiencias confirmadas antes del 31 de octubre incluyen el video editado de la experiencia.",
+  beneficio: "Las experiencias confirmadas antes del 31 de octubre incluyen el video de la experiencia.",
   fechaLimite: "2026-10-31",
   escasez:
     "Un solo club, una sola piscina: recibimos un grupo a la vez. Fechas limitadas entre el 14 de noviembre y el 19 de diciembre.",

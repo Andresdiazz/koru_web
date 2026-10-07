@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { metaPagina } from "@/lib/seo";
 import { ComparisonTable } from "@/components/membresias/ComparisonTable";
 import { MembershipCard } from "@/components/membresias/MembershipCard";
+import { SinCuotaChip } from "@/components/membresias/SinCuotaChip";
 import { PrimeraClaseSection } from "@/components/home/PrimeraClaseSection";
+import { PrimeraClaseFlotante } from "@/components/ui/PrimeraClaseFlotante";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { PageHero } from "@/components/ui/PageHero";
 import { Container, Section } from "@/components/ui/Section";
@@ -18,7 +20,9 @@ export const metadata: Metadata = metaPagina({
 export default function MembresiasPage() {
   return (
     <>
-      <PageHero eyebrow={membresias.eyebrow} titulo={membresias.tituloPagina} texto={membresias.intro} imagen={membresias.imagen} />
+      <PageHero eyebrow={membresias.eyebrow} titulo={membresias.tituloPagina} texto={membresias.intro} imagen={membresias.imagen}>
+        <SinCuotaChip oscuro />
+      </PageHero>
 
       <Section tono="crema" aria-labelledby="titulo-planes">
         <Container>
@@ -32,7 +36,6 @@ export default function MembresiasPage() {
               </StaggerItem>
             ))}
           </Stagger>
-          <p className="mt-14 text-center text-sm text-tostado md:mt-20">{membresias.notaInscripcion}</p>
         </Container>
       </Section>
 
@@ -46,6 +49,7 @@ export default function MembresiasPage() {
       </Section>
 
       <PrimeraClaseSection />
+      <PrimeraClaseFlotante />
     </>
   );
 }

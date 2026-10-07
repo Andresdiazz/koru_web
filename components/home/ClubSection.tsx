@@ -39,7 +39,7 @@ export function ClubSection() {
           {club.cifras.map((c) => (
             <div key={c.label}>
               <dt className="sr-only">{c.label}</dt>
-              <dd className="font-display text-6xl font-light text-terracota md:text-7xl">
+              <dd className="font-sans text-5xl font-extralight tracking-tight text-terracota md:text-6xl">
                 <Counter valor={c.valor} prefijo={c.prefijo} sufijo={c.sufijo} />
               </dd>
               <dd aria-hidden className="mx-auto mt-2 max-w-[16rem] text-sm text-tostado">

@@ -16,7 +16,7 @@ export const sitio = {
   nombre: "KORU",
   frase: "Aquí no entrenas. ¡Aquí renaces!",
   descripcion:
-    "Un club de bienestar boutique en Cali con una piscina terapéutica donde cada sesión la guía un especialista.",
+    "Un club de bienestar boutique en Cali con piscina terapéutica donde cada sesión la guía un especialista.",
   fraseCierre: "Haz de tu próximo encuentro una experiencia para recordar.",
 
   /**
@@ -99,7 +99,7 @@ export const sitio = {
     hero: {
       titulo: "Aquí no entrenas. ¡Aquí renaces!",
       texto:
-        "Un club de bienestar boutique en Cali con una piscina terapéutica donde cada sesión la guía un especialista.",
+        "Un club de bienestar boutique en Cali con piscina terapéutica donde cada sesión la guía un especialista.",
       botonPrincipal: "Agenda tu primera clase",
       botonSecundario: "Conoce el club",
       imagen: { src: "/images/piscina-hero.jpg", alt: "Piscina terapéutica de KORU con columnas, agua turquesa y luz cálida" },
@@ -109,24 +109,24 @@ export const sitio = {
     club: {
       eyebrow: "Conocer KORU",
       titulo: "Somos un club de bienestar.",
-      texto: "Aquí la experiencia es nuestro producto: agua, movimiento y nutrición guiados por especialistas, en grupos pequeños y sin afanes.",
+      texto: "Aquí la experiencia es nuestro producto: agua, movimiento y nutrición guiados por especialistas, en clases semipersonalizadas y sin afanes.",
       /** Cifras que se cuentan al aparecer. */
       cifras: [
-        { valor: 10, prefijo: "+", sufijo: "", label: "años de hidroterapia en Cali" },
+        { valor: 10, prefijo: "+", sufijo: "", label: "años de experiencia en hidroterapia" },
         { valor: 1, prefijo: "", sufijo: "", label: "piscina terapéutica, no recreacional" },
         { valor: 100, prefijo: "", sufijo: "%", label: "de las sesiones en el agua y grupales guiadas por especialistas" },
       ],
     },
     piscina: {
       eyebrow: "La piscina",
-      lineas: ["“En el agua nadie queda por fuera:", "quien no corre, flota;", "quien tiene una lesión,", "se mueve sin dolor.”"],
+      lineas: ["“En el agua nadie queda por fuera:", "cada cuerpo encuentra", "su propio ritmo.”"],
       boton: "Ver clases de piscina",
       imagen: { src: "/images/piscina-parallax.jpg", alt: "Piscina de KORU con el logo de AQUA FIT en la pared de piedra y plantas" },
     },
     clases: {
       eyebrow: "Clases",
       titulo: "Del agua al salón.",
-      texto: "Primero el agua, siempre guiada. Luego el salón, en grupos pequeños. Elige cómo quieres moverte hoy.",
+      texto: "Tu experiencia inicia en el agua, guiada por un especialista, y termina en el salón con clases semipersonalizadas. Elige cómo quieres moverte hoy.",
       boton: "Ver todas las clases",
     },
     membresias: {
@@ -178,7 +178,7 @@ export const sitio = {
     {
       icono: "movimiento",
       titulo: "Movimiento con intención",
-      texto: "Pilates, Yoga, Rumba, Cardio Step y Cardio Box en grupos pequeños.",
+      texto: "Pilates, Yoga, Rumba, Cardio Step y Cardio Box en clases semipersonalizadas.",
     },
     {
       icono: "nutricion",
@@ -191,7 +191,7 @@ export const sitio = {
     {
       nombre: "Andrés Díaz",
       rol: "Hidroterapeuta · Fundador de AQUA FIT",
-      bio: "Lleva más de 10 años en Cali guiando personas en el agua. Cree que el movimiento sin dolor es el primer paso para volver a confiar en el cuerpo.",
+      bio: "Más de 10 años de experiencia guiando personas en el agua. Cree que el movimiento sin dolor es el primer paso para volver a confiar en el cuerpo.",
       imagen: {
         src: "/images/fundador-andres.jpg",
         alt: "Andrés Díaz, hidroterapeuta y cofundador de KORU, junto a la piscina",

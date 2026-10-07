@@ -88,7 +88,7 @@ export const paginaClases = {
   hero: {
     eyebrow: "Experiencias y clases",
     titulo: "Del agua al salón, siempre con intención.",
-    texto: "Clases de piscina guiadas por especialistas, clases de salón en grupos pequeños y sesiones de hidroterapia uno a uno.",
+    texto: "Clases de piscina guiadas por especialistas, clases de salón semipersonalizadas y sesiones de hidroterapia uno a uno.",
     imagen: { src: "/images/piscina-escalones.jpg", alt: "Escalera de acceso a la piscina terapéutica de KORU" },
   },
   piscina: {
@@ -104,7 +104,7 @@ export const paginaClases = {
   },
   salon: {
     eyebrow: "En el salón",
-    titulo: "Movimiento en grupos pequeños.",
+    titulo: "Movimiento semipersonalizado.",
     texto: "Pilates, Yoga, Rumba, Cardio Step y Cardio Box con instructores que te conocen por tu nombre.",
   },
 };
